@@ -221,7 +221,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt.e à faire partie de l'action ?</h2>
           <p className="text-xl mb-8">Participez à nos projets en Guinée et à l'international</p>
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/clubs"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700"
