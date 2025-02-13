@@ -58,18 +58,16 @@ const Home = () => {
   ];
 
   const partners = [
-    {
-      name: "Mairie de Coyah",
-      logo: "https://example.com/mairie-logo.png"
-    },
-    {
-      name: "Office du Tourisme",
-      logo: "https://example.com/tourisme-logo.png"
-    },
-    {
-      name: "Association Nature & Découvertes",
-      logo: "https://example.com/nature-logo.png"
-    }
+    { name: "Partenaire 1", logo: "/logos/partner1.svg" },
+    { name: "Partenaire 2", logo: "/logos/partner2.svg" },
+    { name: "Partenaire 3", logo: "/logos/partner3.svg" },
+    { name: "Partenaire 4", logo: "/logos/partner4.svg" },
+    { name: "Partenaire 5", logo: "/logos/partner5.svg" },
+    { name: "Partenaire 6", logo: "/logos/partner6.svg" },
+    { name: "Partenaire 7", logo: "/logos/partner7.svg" },
+    { name: "Partenaire 8", logo: "/logos/partner8.svg" },
+    { name: "Partenaire 9", logo: "/logos/partner9.svg" },
+    { name: "Partenaire 10", logo: "/logos/partner10.svg" },
   ];
 
   const recentActivities = [
@@ -162,6 +160,44 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* Partners Section with Infinite Scroll - Added just after hero */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
+            Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
+          </h2>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll space-x-8">
+              {partners.map((partner, index) => (
+                <div
+                  key={`partner1-${index}`}
+                  className="flex-none w-40 h-40 filter grayscale hover:grayscale-0 transition-all duration-300"
+                >
+                  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
+                    <div className="text-gray-500 text-center font-medium">
+                      {partner.name}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {partners.map((partner, index) => (
+                <div
+                  key={`partner2-${index}`}
+                  className="flex-none w-40 h-40 filter grayscale hover:grayscale-0 transition-all duration-300"
+                >
+                  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
+                    <div className="text-gray-500 text-center font-medium">
+                      {partner.name}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       {/* Impact Numbers */}
       <div className="py-12">
@@ -271,28 +307,6 @@ const Home = () => {
               Voir toutes nos actions
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Partners Section */}
-      <div className="bg-emerald-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8">Nos Partenaires</h2>
-          <p className="text-center text-gray-600 mb-12">Dans la réalisation de nos actions, nous sommes soutenu·e·s par</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {partners.map((partner, index) => (
-              <div 
-                key={index} 
-                className="flex-none bg-white p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
-              >
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-lg font-medium text-gray-900 text-center hover:text-emerald-800">
-                    {partner.name}
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
