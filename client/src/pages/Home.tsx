@@ -2,93 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen, Handshake, MessageSquare, Award } from 'lucide-react';
 import { Link } from 'wouter';
 
-interface Partner {
-  name: string;
-  logo: string;
-}
-
-interface Activity {
-  title: string;
-  date: string;
-  image: string;
-  description: string;
-}
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-}
-
-const partners: Partner[] = [
+const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "/Plan-de-travail-2-1.png"
+      logo: "attached_assets/Plan-de-travail-2-1.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "/Le-logo-de-la-CEDEAO.jpg"
+      logo: "attached_assets/Le-logo-de-la-CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "/UA.png"
+      logo: "attached_assets/UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "/unesco-logo-260px.jpg"
+      logo: "attached_assets/unesco-logo-260px.jpg"
     },
     { 
       name: "ONU", 
-      logo: "/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+      logo: "attached_assets/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "/images.png"
+      logo: "attached_assets/images.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+      logo: "attached_assets/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
     }
-];
-
-const recentActivities: Activity[] = [
-  {
-    title: "Journée de sensibilisation environnementale",
-    date: "Mars 2024",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Sensibilisation des jeunes à la protection de l'environnement"
-  },
-  {
-    title: "Collecte de fonds annuelle",
-    date: "Février 2024",
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Soirée de gala pour soutenir nos projets éducatifs"
-  },
-  {
-    title: "Atelier intergénérationnel",
-    date: "Janvier 2024",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Échange de savoirs entre seniors et jeunes"
-  }
-];
-
-const testimonials: Testimonial[] = [
-  {
-    quote: "Le Grison Club m'a permis de développer mes compétences tout en aidant les autres.",
-    author: "Marie K.",
-    role: "Membre depuis 2022"
-  },
-  {
-    quote: "Une expérience enrichissante qui m'a ouvert de nouvelles perspectives.",
-    author: "Thomas L.",
-    role: "Bénévole"
-  },
-  {
-    quote: "Grâce au club, j'ai pu concrétiser mon projet environnemental.",
-    author: "Sophie M.",
-    role: "Porteuse de projet"
-  }
-];
+  ];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -142,6 +85,46 @@ const Home = () => {
       icon: <Users className="h-12 w-12 text-emerald-800" />,
       title: "Bénévolat",
       description: "Formation de leaders bénévoles engagés"
+    }
+  ];
+
+
+  const recentActivities = [
+    {
+      title: "Journée de sensibilisation environnementale",
+      date: "Mars 2024",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      description: "Sensibilisation des jeunes à la protection de l'environnement"
+    },
+    {
+      title: "Collecte de fonds annuelle",
+      date: "Février 2024",
+      image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      description: "Soirée de gala pour soutenir nos projets éducatifs"
+    },
+    {
+      title: "Atelier intergénérationnel",
+      date: "Janvier 2024",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      description: "Échange de savoirs entre seniors et jeunes"
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Le Grison Club m'a permis de développer mes compétences tout en aidant les autres.",
+      author: "Marie K.",
+      role: "Membre depuis 2022"
+    },
+    {
+      quote: "Une expérience enrichissante qui m'a ouvert de nouvelles perspectives.",
+      author: "Thomas L.",
+      role: "Bénévole"
+    },
+    {
+      quote: "Grâce au club, j'ai pu concrétiser mon projet environnemental.",
+      author: "Sophie M.",
+      role: "Porteuse de projet"
     }
   ];
 
@@ -212,7 +195,7 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={`/attached_assets${partner.logo}`}
+                      src={partner.logo} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
@@ -226,7 +209,7 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={`/attached_assets${partner.logo}`}
+                      src={partner.logo} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
