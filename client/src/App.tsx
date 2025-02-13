@@ -5,16 +5,16 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Clubs from "@/pages/Clubs";
-import Events from "@/pages/Events";
-import Gallery from "@/pages/Gallery";
-import Resources from "@/pages/Resources";
-import Forum from "@/pages/Forum";
-import Contact from "@/pages/Contact";
-import Login from "@/pages/Login";
-import Profile from "@/pages/Profile";
-import Membership from "@/pages/Membership";
+import About from "./pages/About";
+import Clubs from "./pages/Clubs";
+import Events from "./pages/Events";
+import Gallery from "./pages/Gallery";
+import Resources from "./pages/Resources";
+import Forum from "./pages/Forum";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Membership from "./pages/Membership";
 
 function Router() {
   return (

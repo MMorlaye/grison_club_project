@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, Plus, Search, ThumbsUp, MessageCircle, Share2, User } from 'lucide-react';
+import { MessageSquare, Plus, Search, ThumbsUp, MessageCircle, Share2 } from 'lucide-react';
 import { Link } from 'wouter';
 
 // Simuler un état de connexion (à remplacer par une vraie authentification)
