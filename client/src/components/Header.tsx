@@ -6,13 +6,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navigation = [
-    { name: 'Accueil', href: '/' },
-    { name: 'À propos', href: '/about' },
-    { name: 'Clubs', href: '/clubs' },
+    { name: 'Qui sommes-nous ?', href: '/about' },
     { name: 'Événements', href: '/events' },
-    { name: 'Galerie', href: '/gallery' },
     { name: 'Ressources', href: '/resources' },
-    { name: 'Forum', href: '/forum' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -27,7 +23,7 @@ const Header = () => {
               </a>
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
             {navigation.map((link) => (
