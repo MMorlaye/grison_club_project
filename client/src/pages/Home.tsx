@@ -2,6 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen, Handshake, MessageSquare, Award } from 'lucide-react';
 import { Link } from 'wouter';
 
+const partners = [
+    { 
+      name: "Office National du Tourisme", 
+      logo: "/attached_assets/Plan-de-travail-2-1.png"
+    },
+    { 
+      name: "CEDEAO", 
+      logo: "/attached_assets/Le-logo-de-la-CEDEAO.jpg"
+    },
+    { 
+      name: "Union Africaine", 
+      logo: "/attached_assets/UA.png"
+    },
+    { 
+      name: "UNESCO", 
+      logo: "/attached_assets/unesco-logo-260px.jpg"
+    },
+    { 
+      name: "ONU", 
+      logo: "/attached_assets/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+    },
+    { 
+      name: "Guinée", 
+      logo: "/attached_assets/images.png"
+    },
+    { 
+      name: "Union Européenne", 
+      logo: "/attached_assets/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+    }
+  ];
+
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -57,18 +88,6 @@ const Home = () => {
     }
   ];
 
-  const partners = [
-    { name: "Partenaire 1", logo: "/logos/partner1.svg" },
-    { name: "Partenaire 2", logo: "/logos/partner2.svg" },
-    { name: "Partenaire 3", logo: "/logos/partner3.svg" },
-    { name: "Partenaire 4", logo: "/logos/partner4.svg" },
-    { name: "Partenaire 5", logo: "/logos/partner5.svg" },
-    { name: "Partenaire 6", logo: "/logos/partner6.svg" },
-    { name: "Partenaire 7", logo: "/logos/partner7.svg" },
-    { name: "Partenaire 8", logo: "/logos/partner8.svg" },
-    { name: "Partenaire 9", logo: "/logos/partner9.svg" },
-    { name: "Partenaire 10", logo: "/logos/partner10.svg" },
-  ];
 
   const recentActivities = [
     {
@@ -161,7 +180,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Partners Section with Infinite Scroll - Added just after hero */}
+      {/* Partners Section with Infinite Scroll */}
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
@@ -172,24 +191,28 @@ const Home = () => {
               {partners.map((partner, index) => (
                 <div
                   key={`partner1-${index}`}
-                  className="flex-none w-40 h-40 filter grayscale hover:grayscale-0 transition-all duration-300"
+                  className="flex-none w-48 h-32 filter grayscale hover:grayscale-0 transition-all duration-300"
                 >
-                  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
-                    <div className="text-gray-500 text-center font-medium">
-                      {partner.name}
-                    </div>
+                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                 </div>
               ))}
               {partners.map((partner, index) => (
                 <div
                   key={`partner2-${index}`}
-                  className="flex-none w-40 h-40 filter grayscale hover:grayscale-0 transition-all duration-300"
+                  className="flex-none w-48 h-32 filter grayscale hover:grayscale-0 transition-all duration-300"
                 >
-                  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
-                    <div className="text-gray-500 text-center font-medium">
-                      {partner.name}
-                    </div>
+                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                 </div>
               ))}
