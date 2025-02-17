@@ -59,10 +59,11 @@ const Home = () => {
   }, []);
 
   const impactNumbers = [
-    { number: "1000+", label: "Membres actifs" },
-    { number: "50+", label: "Projets réalisés" },
-    { number: "20+", label: "Pays représentés" },
-    { number: "10k+", label: "Personnes impactées" }
+    { number: "+2000", label: "Projets de volontariat à l'international" },
+    { number: "+100", label: "Projets de volontariat en France" },
+    { number: "+300", label: "Volontaires français·e·s à l'international" },
+    { number: "+1000", label: "Volontaires en France" },
+    { number: "+100", label: "Volontaires en Service Civique" }
   ];
 
   const objectives = [
@@ -236,14 +237,34 @@ const Home = () => {
       </div>
 
 
-      {/* Impact Numbers */}
-      <div className="py-12">
+      {/* Impact Numbers avec nouveau design */}
+      <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-between gap-8">
             {impactNumbers.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-emerald-800">{item.number}</div>
-                <div className="mt-2 text-gray-600">{item.label}</div>
+              <div 
+                key={index} 
+                className="flex-1 min-w-[200px] bg-white rounded-lg shadow-lg p-6 border border-emerald-100 transform transition-transform hover:scale-105"
+              >
+                <div className="flex items-start space-x-2">
+                  <div className="text-emerald-800">
+                    <svg 
+                      viewBox="0 0 24 24" 
+                      className="w-6 h-6 transform rotate-180" 
+                      fill="currentColor"
+                    >
+                      <path d="M12 2L2 22h20L12 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-emerald-600 mb-2">
+                      {item.number}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {item.label}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
