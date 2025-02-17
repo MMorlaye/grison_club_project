@@ -55,54 +55,60 @@
 }
 
 .animate-scroll {
-  animation: scroll 120s linear infinite; /* Augmentation de la durée à 120s pour un défilement plus lent */
+  animation: scroll 120s linear infinite;
   display: flex;
   width: fit-content;
-  will-change: transform; /* Optimisation des performances */
+  will-change: transform;
 }
 
 .animate-scroll:hover {
   animation-play-state: paused;
 }
 
-/* Transition douce pour l'état de pause */
 .animate-scroll {
   transition: all 0.5s ease-out;
 }
 
-/* Styles personnalisés pour la section hero et la présentation */
-.hero-section {
-  min-height: 80vh; /* Augmentation de la hauteur */
-}
-
-.presentation-text {
-  @apply text-xl leading-relaxed text-gray-700; /* Augmentation de la taille du texte de lg à xl */
-}
-
-.testimonial-text {
-  font-family: 'Londrina Solid', sans-serif;
-  @apply text-2xl italic text-emerald-800; /* Augmentation de la taille de la citation */
-}
-
-/* Styles pour les cards rotatifs */
+/* Styles pour les cartes rotatives */
 .card-rotate-left {
   transform: rotate(-20deg);
-  transition: all 1s ease-in-out;
 }
 
 .card-rotate-right {
   transform: rotate(15deg);
-  transition: all 1s ease-in-out;
 }
 
+/* Animation de transition des images */
 .card-image {
-  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
 }
 
-.card-image.fade-out {
+.card-image-enter {
   opacity: 0;
 }
 
-.card-image.fade-in {
+.card-image-enter-active {
   opacity: 1;
+}
+
+.card-image-exit {
+  opacity: 1;
+}
+
+.card-image-exit-active {
+  opacity: 0;
+}
+
+.hero-section {
+  min-height: 80vh;
+}
+
+.presentation-text {
+  @apply text-xl leading-relaxed text-gray-700;
+}
+
+.testimonial-text {
+  font-family: 'Londrina Solid', sans-serif;
+  @apply text-2xl italic text-emerald-800;
 }
