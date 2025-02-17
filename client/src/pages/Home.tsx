@@ -50,6 +50,7 @@ const heroImages = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -186,7 +187,15 @@ const Home = () => {
             Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
           </h2>
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-8">
+            <div 
+              className={`flex space-x-8 ${!isPaused ? 'animate-scroll' : ''}`}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              style={{
+                animationPlayState: isPaused ? 'paused' : 'running',
+                transition: 'animation-play-state 0.3s ease'
+              }}
+            >
               {partners.map((partner, index) => (
                 <div
                   key={`partner1-${index}`}
@@ -201,7 +210,6 @@ const Home = () => {
                   </div>
                 </div>
               ))}
-              {/* Duplicate pour l'animation infinie */}
               {partners.map((partner, index) => (
                 <div
                   key={`partner2-${index}`}
