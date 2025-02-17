@@ -5,31 +5,31 @@ import { Link } from 'wouter';
 const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "/img/Plan-de-travail-2-1.png"
+      logo: "./img/Plan-de-travail-2-1.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "/img/Le-logo-de-la-CEDEAO.jpg"
+      logo: "./img/Le-logo-de-la-CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "/img/UA.png"
+      logo: "./img/UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "/img/unesco-logo-260px.jpg"
+      logo: "./img/unesco-logo-260px.jpg"
     },
     { 
       name: "ONU", 
-      logo: "/img/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+      logo: "./img/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "/img/images.png"
+      logo: "./img/images.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "/img/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+      logo: "./img/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
     }
 ];
 
