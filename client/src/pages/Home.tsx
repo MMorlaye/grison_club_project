@@ -223,7 +223,7 @@ const Home = () => {
                 Fatou, 19 ans, membre active du Grison Youth Club
               </footer>
             </blockquote>
-            <div className="text-center mt-8">
+            <div className="mt-8">
               <Link
                 href="/about"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700 transition-colors"
