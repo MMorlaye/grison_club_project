@@ -401,14 +401,14 @@ const Home = () => {
               Prêt·e à faire partie de l'action ?
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Participez à nos projets de volontariat en France ou à l'international
+              Impliquez-vous et contribuez à des projets pour impacter positivement votre communauté.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/volunteer"
+                href="/clubs"
                 className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors"
               >
-                Devenir volontaire
+                Découvrir nos clubs
               </Link>
               <Link
                 href="/join"
