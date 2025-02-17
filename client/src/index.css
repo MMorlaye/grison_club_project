@@ -50,17 +50,22 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 1rem)); /* Ajustement pour l'espacement */
+    transform: translateX(calc(-50% - 1rem));
   }
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 120s linear infinite; /* Augmentation de la durée à 120s pour un défilement plus lent */
   display: flex;
-  width: fit-content; /* Pour s'assurer que le conteneur s'adapte au contenu */
+  width: fit-content;
+  will-change: transform; /* Optimisation des performances */
 }
 
-/* Assure une transition fluide lors de la pause */
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Transition douce pour l'état de pause */
+.animate-scroll {
+  transition: all 0.5s ease-out;
 }

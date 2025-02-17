@@ -50,12 +50,11 @@ const heroImages = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 10000); // Increased interval to 10 seconds
     return () => clearInterval(timer);
   }, []);
 
@@ -139,7 +138,7 @@ const Home = () => {
               src={image.url}
               alt={image.caption}
               className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-20' : 'opacity-0'
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             />
           ))}
@@ -187,11 +186,7 @@ const Home = () => {
             Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
           </h2>
           <div className="relative overflow-hidden">
-            <div 
-              className={`flex space-x-8 ${!isPaused ? 'animate-scroll' : ''}`}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-            >
+            <div className="animate-scroll">
               {[...partners, ...partners].map((partner, index) => (
                 <div
                   key={`partner-${index}`}
