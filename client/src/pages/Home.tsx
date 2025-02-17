@@ -244,7 +244,7 @@ const Home = () => {
             {impactNumbers.map((item, index) => (
               <div 
                 key={index} 
-                className="flex-1 min-w-[200px] bg-white rounded-lg shadow-lg p-8 border border-emerald-100 transform transition-transform hover:scale-105"
+                className="flex-1 min-w-[200px] bg-gradient-to-br from-emerald-50 to-white rounded-lg shadow-lg p-8 border border-emerald-100 transform transition-transform hover:scale-105"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-emerald-800">
