@@ -245,181 +245,76 @@ const Home = () => {
 
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
-            <div className="flex flex-wrap justify-between gap-8">
-              {impactNumbers.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="flex-1 min-w-[200px] bg-gradient-to-br from-emerald-50 to-white rounded-lg shadow-lg p-8 border-2 border-emerald-600 transform transition-transform hover:scale-105"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-emerald-800">
-                      <svg 
-                        viewBox="0 0 24 24" 
-                        className={`w-8 h-8 transform ${index === 1 || index === 3 ? '' : 'rotate-180'}`} 
-                        fill="currentColor"
-                      >
-                        <path d="M12 2L2 22h20L12 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-4xl font-bold text-emerald-600 mb-3">
-                        {item.number}
-                      </div>
-                      <div className="text-base text-gray-600">
-                        {item.label}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Première rangée avec 3 cartes */}
-          <div className="grid grid-cols-3 gap-4 mb-16">
-            <div className="relative w-[250px] h-[250px] mx-auto">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-                <img
-                  src={heroImages[currentSlide].url}
-                  alt="Image rotative 1"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-1-${currentSlide}`}
-                />
-              </div>
-            </div>
-            <div className="relative w-[250px] h-[250px] mx-auto">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
-                  src={heroImages[(currentSlide + 1) % heroImages.length].url}
-                  alt="Image rotative 2"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-2-${currentSlide}`}
-                />
-              </div>
-            </div>
-            <div className="relative w-[250px] h-[250px] mx-auto">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-                <img
-                  src={heroImages[(currentSlide + 2) % heroImages.length].url}
-                  alt="Image rotative 3"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-3-${currentSlide}`}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Deuxième rangée avec 3 cartes */}
-          <div className="flex justify-center gap-16">
-            <div className="relative w-[250px] h-[250px]">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-                <img
-                  src={heroImages[(currentSlide + 3) % heroImages.length].url}
-                  alt="Image rotative 4"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-4-${currentSlide}`}
-                />
-              </div>
-            </div>
-            <div className="relative w-[250px] h-[250px]">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
-                  src={heroImages[(currentSlide + 4) % heroImages.length].url}
-                  alt="Image rotative 5"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-5-${currentSlide}`}
-                />
-              </div>
-            </div>
-            <div className="relative w-[250px] h-[250px]">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-                <img
-                  src={heroImages[(currentSlide + 5) % heroImages.length].url}
-                  alt="Image rotative 6"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-6-${currentSlide}`}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Section Objectifs with new design */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-emerald-800">Nos Missions</h2>
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 text-center">Nos Missions</h2>
             <p className="mt-4 text-xl text-gray-600">
               À Grison Club, on fait quoi ?
             </p>
+            <p className="mt-2 text-lg text-gray-600 max-w-3xl">
+              Notre association s'engage dans quatre domaines d'intervention majeurs, chacun contribuant à notre vision d'une société plus équitable et durable. Découvrez nos actions dans ces différents domaines :
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Carte Volontariats */}
-            <div className="group relative h-80 overflow-hidden rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-                alt="Volontariats"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Volontariats</h3>
-                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
-                  Engagez-vous dans des projets internationaux et locaux pour faire la différence.
-                </p>
-              </div>
-            </div>
-
-            {/* Carte Formations */}
+            {/* Carte Éducation */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-                alt="Formations"
+                alt="Éducation"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Formations</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Éducation</h3>
                 <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
-                  Développez vos compétences et votre leadership à travers nos programmes de formation.
+                  Soutien à l'apprentissage et au développement des compétences des jeunes.
                 </p>
               </div>
             </div>
 
-            {/* Carte Lutte contre les exclusions */}
+            {/* Carte Environnement */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
                 src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-                alt="Lutte contre les exclusions"
+                alt="Environnement"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Lutte contre les exclusions</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Environnement</h3>
                 <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
-                  Agissez pour une société plus inclusive et solidaire.
+                  Protection de l'environnement et sensibilisation écologique.
                 </p>
               </div>
             </div>
 
-            {/* Carte Animer un chantier */}
+            {/* Carte Culture */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
                 src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-                alt="Animer un chantier"
+                alt="Culture"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Animer un chantier</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Culture</h3>
                 <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
-                  Coordonnez des projets collectifs et développez vos compétences d'animation.
+                  Promotion des cultures locales et du patrimoine guinéen.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Volontariat */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Volontariat"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Volontariat</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Formation et engagement de leaders bénévoles pour servir la communauté.
                 </p>
               </div>
             </div>
