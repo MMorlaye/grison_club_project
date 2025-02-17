@@ -54,7 +54,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 10000); // Increased interval to 10 seconds
+    }, 10000); 
     return () => clearInterval(timer);
   }, []);
 
@@ -130,7 +130,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section with Slideshow */}
-      <div className="relative bg-emerald-800 text-white">
+      <div className="relative bg-emerald-800 text-white hero-section">
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
             <img
@@ -179,8 +179,37 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Nouvelle section de présentation */}
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Grison-Club, c'est quoi ?</h2>
+          <div className="space-y-6 presentation-text">
+            <p>
+              Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
+            </p>
+            <p>
+              En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.
+            </p>
+            <blockquote className="testimonial-text bg-white p-6 rounded-lg shadow-lg my-8">
+              « Ce qui m'a marqué, c'est l'équilibre entre les actions concrètes, comme planter des arbres, et les réflexions sur notre rôle dans la société. Les formations m'ont aidé à développer mon leadership, et les rencontres avec d'autres membres ont été inspirantes. Grison-Club m'a permis de grandir tout en servant ma communauté. »
+              <footer className="mt-2 text-base font-normal text-gray-600">
+                Fatou, 19 ans, membre active du Grison Youth Club
+              </footer>
+            </blockquote>
+            <div className="text-center mt-8">
+              <Link
+                href="/about"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700 transition-colors"
+              >
+                En savoir plus
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Partners Section with Infinite Scroll */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-white mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
             Dans la réalisation de nos actions, nous sommes soutenu·e·s par :

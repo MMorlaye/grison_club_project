@@ -69,3 +69,17 @@
 .animate-scroll {
   transition: all 0.5s ease-out;
 }
+
+/* Styles personnalisés pour la section hero et la présentation */
+.hero-section {
+  min-height: 80vh; /* Augmentation de la hauteur */
+}
+
+.presentation-text {
+  @apply text-lg leading-relaxed text-gray-700;
+}
+
+.testimonial-text {
+  font-family: 'Londrina Solid', sans-serif;
+  @apply text-xl italic text-emerald-800;
+}
