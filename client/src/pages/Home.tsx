@@ -34,40 +34,38 @@ const partners = [
 ];
 
 const heroImages = [
-    {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Sensibilisation environnementale"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Échange intergénérationnel"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Actions solidaires"
-    }
-  ];
+  {
+    url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    caption: "Sensibilisation environnementale"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    caption: "Échange intergénérationnel"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    caption: "Actions solidaires"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    caption: "Formation des jeunes"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    caption: "Projets culturels"
+  }
+];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const heroTimer = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 10000);
-
-    const cardTimer = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-        setIsTransitioning(false);
-      }, 1000);
     }, 8000);
 
     return () => {
-      clearInterval(heroTimer);
-      clearInterval(cardTimer);
+      clearInterval(timer);
     };
   }, []);
 
@@ -245,6 +243,7 @@ const Home = () => {
       </div>
 
 
+
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
@@ -282,15 +281,14 @@ const Home = () => {
 
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Première rangée avec 2 cartes */}
           <div className="grid grid-cols-2 gap-8 mb-8">
             <div className="relative w-[250px] h-[250px] mx-auto">
               <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
                 <img
                   src={heroImages[currentSlide].url}
                   alt="Image rotative 1"
-                  className={`w-full h-full object-cover card-image ${
-                    isTransitioning ? 'fade-out' : 'fade-in'
-                  }`}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -299,22 +297,40 @@ const Home = () => {
                 <img
                   src={heroImages[(currentSlide + 1) % heroImages.length].url}
                   alt="Image rotative 2"
-                  className={`w-full h-full object-cover card-image ${
-                    isTransitioning ? 'fade-out' : 'fade-in'
-                  }`}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
           </div>
-          <div className="relative w-[250px] h-[250px] mx-auto">
-            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-              <img
-                src={heroImages[(currentSlide + 2) % heroImages.length].url}
-                alt="Image rotative 3"
-                className={`w-full h-full object-cover card-image ${
-                  isTransitioning ? 'fade-out' : 'fade-in'
-                }`}
-              />
+
+          {/* Deuxième rangée avec 3 cartes */}
+          <div className="flex justify-center gap-8">
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
+                <img
+                  src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                  alt="Image rotative 3"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src={heroImages[(currentSlide + 3) % heroImages.length].url}
+                  alt="Image rotative 4"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+                <img
+                  src={heroImages[(currentSlide + 4) % heroImages.length].url}
+                  alt="Image rotative 5"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
