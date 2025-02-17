@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -107,6 +112,17 @@
 }
 
 .testimonial-text {
-  font-family: 'Londrina Solid', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   @apply text-2xl italic text-emerald-800;
+}
+
+/* Custom styles for missions section */
+.missions-question {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-2xl font-bold text-emerald-800 mb-4;
+}
+
+.missions-intro {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-xl font-semibold text-gray-700 leading-relaxed;
 }

@@ -247,10 +247,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-emerald-800 text-center">Nos Missions</h2>
-            <p className="mt-4 text-xl text-gray-600">
+            <p className="mt-6 missions-question">
               À Grison Club, on fait quoi ?
             </p>
-            <p className="mt-2 text-lg text-gray-600 max-w-3xl">
+            <p className="mt-4 missions-intro">
               Notre association s'engage dans quatre domaines d'intervention majeurs, chacun contribuant à notre vision d'une société plus équitable et durable. Découvrez nos actions dans ces différents domaines :
             </p>
           </div>
