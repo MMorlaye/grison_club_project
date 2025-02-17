@@ -62,7 +62,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 8000);
+    }, 20000); 
 
     return () => {
       clearInterval(timer);
@@ -147,8 +147,8 @@ const Home = () => {
               key={index}
               src={image.url}
               alt={image.caption}
-              className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-20' : 'opacity-0'
+              className={`absolute w-full h-full object-cover transition-opacity duration-2000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             />
           ))}
@@ -243,7 +243,6 @@ const Home = () => {
       </div>
 
 
-
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
@@ -284,33 +283,57 @@ const Home = () => {
           {/* Première rangée avec 3 cartes */}
           <div className="grid grid-cols-3 gap-4 mb-16">
             <div className="relative w-[250px] h-[250px] mx-auto">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-                <img
-                  src={heroImages[currentSlide].url}
-                  alt="Image rotative 1"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-1-${currentSlide}`}
-                />
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[currentSlide].url}
+                    alt="Image rotative 1"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-1-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[(currentSlide + 1) % heroImages.length].url}
+                    alt="Image rotative 1 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-1-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
             <div className="relative w-[250px] h-[250px] mx-auto">
               <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
-                  src={heroImages[(currentSlide + 1) % heroImages.length].url}
-                  alt="Image rotative 2"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-2-${currentSlide}`}
-                />
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[(currentSlide + 1) % heroImages.length].url}
+                    alt="Image rotative 2"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-2-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                    alt="Image rotative 2 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-2-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
             <div className="relative w-[250px] h-[250px] mx-auto">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-                <img
-                  src={heroImages[(currentSlide + 2) % heroImages.length].url}
-                  alt="Image rotative 3"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-3-${currentSlide}`}
-                />
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                    alt="Image rotative 3"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-3-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[(currentSlide + 3) % heroImages.length].url}
+                    alt="Image rotative 3 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-3-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -318,33 +341,57 @@ const Home = () => {
           {/* Deuxième rangée avec 3 cartes */}
           <div className="flex justify-center gap-16">
             <div className="relative w-[250px] h-[250px]">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-                <img
-                  src={heroImages[(currentSlide + 3) % heroImages.length].url}
-                  alt="Image rotative 4"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-4-${currentSlide}`}
-                />
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[(currentSlide + 3) % heroImages.length].url}
+                    alt="Image rotative 4"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-4-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[(currentSlide + 4) % heroImages.length].url}
+                    alt="Image rotative 4 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-4-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
             <div className="relative w-[250px] h-[250px]">
               <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
-                  src={heroImages[(currentSlide + 4) % heroImages.length].url}
-                  alt="Image rotative 5"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-5-${currentSlide}`}
-                />
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[(currentSlide + 4) % heroImages.length].url}
+                    alt="Image rotative 5"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-5-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[(currentSlide + 5) % heroImages.length].url}
+                    alt="Image rotative 5 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-5-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
             <div className="relative w-[250px] h-[250px]">
-              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-                <img
-                  src={heroImages[(currentSlide + 5) % heroImages.length].url}
-                  alt="Image rotative 6"
-                  className="w-full h-full object-cover card-image"
-                  key={`card-6-${currentSlide}`}
-                />
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="card-image-container">
+                  <img
+                    src={heroImages[(currentSlide + 5) % heroImages.length].url}
+                    alt="Image rotative 6"
+                    className="card-image transition-opacity duration-2000 ease-in-out"
+                    key={`card-6-${currentSlide}`}
+                  />
+                  <img
+                    src={heroImages[currentSlide].url}
+                    alt="Image rotative 6 next"
+                    className="card-image transition-opacity duration-2000 ease-in-out opacity-0"
+                    key={`card-6-next-${currentSlide}`}
+                  />
+                </div>
               </div>
             </div>
           </div>
