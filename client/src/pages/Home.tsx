@@ -188,60 +188,77 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-16 bg-white mt-8">
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
-            Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
-          </h2>
-          <div className="relative overflow-hidden">
-            <div className="animate-scroll">
-              {[...partners, ...partners].map((partner, index) => (
-                <div
-                  key={`partner-${index}`}
-                  className="flex-none w-48 h-32 filter grayscale hover:grayscale-0 transition-all duration-300"
-                >
-                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
+          {/* Première rangée avec 3 cartes */}
+          <div className="grid grid-cols-3 gap-4 mb-16">
+            <div className="relative w-[250px] h-[250px] mx-auto">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
+                <img
+                  src={heroImages[currentSlide].url}
+                  alt="Image rotative 1"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-1-${currentSlide}`}
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px] mx-auto">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src={heroImages[(currentSlide + 1) % heroImages.length].url}
+                  alt="Image rotative 2"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-2-${currentSlide}`}
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px] mx-auto">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+                <img
+                  src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                  alt="Image rotative 3"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-3-${currentSlide}`}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Deuxième rangée avec 3 cartes */}
+          <div className="flex justify-center gap-16">
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
+                <img
+                  src={heroImages[(currentSlide + 3) % heroImages.length].url}
+                  alt="Image rotative 4"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-4-${currentSlide}`}
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src={heroImages[(currentSlide + 4) % heroImages.length].url}
+                  alt="Image rotative 5"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-5-${currentSlide}`}
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px]">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+                <img
+                  src={heroImages[(currentSlide + 5) % heroImages.length].url}
+                  alt="Image rotative 6"
+                  className="w-full h-full object-cover card-image"
+                  key={`card-6-${currentSlide}`}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Grison-Club, c'est quoi ?</h2>
-          <div className="space-y-6 presentation-text">
-            <p>
-              Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
-            </p>
-            <p>
-              En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.
-            </p>
-            <blockquote className="testimonial-text bg-white p-6 rounded-lg shadow-lg my-8">
-              « Ce qui m'a marqué, c'est l'équilibre entre les actions concrètes, comme planter des arbres, et les réflexions sur notre rôle dans la société. Les formations m'ont aidé à développer mon leadership, et les rencontres avec d'autres membres ont été inspirantes. Grison-Club m'a permis de grandir tout en servant ma communauté. »
-              <footer className="mt-2 text-base font-normal text-gray-600">
-                Fatou, 19 ans, membre active du Grison Youth Club
-              </footer>
-            </blockquote>
-            <div className="mt-8">
-              <Link
-                href="/about"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700 transition-colors"
-              >
-                En savoir plus
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
