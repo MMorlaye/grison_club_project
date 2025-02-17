@@ -62,8 +62,7 @@ const Home = () => {
     { number: "+2000", label: "Projets de volontariat à l'international" },
     { number: "+100", label: "Projets de volontariat en France" },
     { number: "+300", label: "Volontaires français·e·s à l'international" },
-    { number: "+1000", label: "Volontaires en France" },
-    { number: "+100", label: "Volontaires en Service Civique" }
+    { number: "+1000", label: "Volontaires en France" }
   ];
 
   const objectives = [
@@ -251,7 +250,7 @@ const Home = () => {
                     <div className="text-emerald-800">
                       <svg 
                         viewBox="0 0 24 24" 
-                        className="w-8 h-8 transform rotate-180" 
+                        className={`w-8 h-8 transform ${index === 1 || index === 3 ? '' : 'rotate-180'}`} 
                         fill="currentColor"
                       >
                         <path d="M12 2L2 22h20L12 2z" />
