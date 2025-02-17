@@ -41,6 +41,36 @@
   }
 }
 
+.hero-section {
+  min-height: 80vh;
+}
+
+.presentation-title {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-3xl font-bold text-gray-900 mb-6;
+}
+
+.presentation-text {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-xl font-semibold text-gray-700 leading-relaxed;
+}
+
+.testimonial-text {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-2xl italic text-emerald-800;
+}
+
+/* Custom styles for missions section */
+.missions-question {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-2xl font-bold text-emerald-800 mb-4;
+}
+
+.missions-intro {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-xl font-semibold text-gray-700 leading-relaxed;
+}
+
 /* Animation pour le défilement des logos */
 @keyframes scroll {
   from {
@@ -101,28 +131,4 @@
 .card-image-exit-active {
   opacity: 0;
   filter: blur(8px);
-}
-
-.hero-section {
-  min-height: 80vh;
-}
-
-.presentation-text {
-  @apply text-xl leading-relaxed text-gray-700;
-}
-
-.testimonial-text {
-  font-family: 'Montserrat', sans-serif;
-  @apply text-2xl italic text-emerald-800;
-}
-
-/* Custom styles for missions section */
-.missions-question {
-  font-family: 'Montserrat', sans-serif;
-  @apply text-2xl font-bold text-emerald-800 mb-4;
-}
-
-.missions-intro {
-  font-family: 'Montserrat', sans-serif;
-  @apply text-xl font-semibold text-gray-700 leading-relaxed;
 }
