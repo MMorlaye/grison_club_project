@@ -244,23 +244,23 @@ const Home = () => {
             {impactNumbers.map((item, index) => (
               <div 
                 key={index} 
-                className="flex-1 min-w-[200px] bg-white rounded-lg shadow-lg p-6 border border-emerald-100 transform transition-transform hover:scale-105"
+                className="flex-1 min-w-[200px] bg-white rounded-lg shadow-lg p-8 border border-emerald-100 transform transition-transform hover:scale-105"
               >
-                <div className="flex items-start space-x-2">
+                <div className="flex items-start space-x-4">
                   <div className="text-emerald-800">
                     <svg 
                       viewBox="0 0 24 24" 
-                      className="w-6 h-6 transform rotate-180" 
+                      className="w-8 h-8 transform rotate-180" 
                       fill="currentColor"
                     >
                       <path d="M12 2L2 22h20L12 2z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-emerald-600 mb-2">
+                    <div className="text-4xl font-bold text-emerald-600 mb-3">
                       {item.number}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-base text-gray-600">
                       {item.label}
                     </div>
                   </div>
