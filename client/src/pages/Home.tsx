@@ -50,12 +50,25 @@ const heroImages = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const heroTimer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 10000); 
-    return () => clearInterval(timer);
+    }, 10000);
+
+    const cardTimer = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+        setIsTransitioning(false);
+      }, 1000);
+    }, 8000);
+
+    return () => {
+      clearInterval(heroTimer);
+      clearInterval(cardTimer);
+    };
   }, []);
 
   const impactNumbers = [
@@ -129,7 +142,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section with Slideshow */}
       <div className="relative bg-emerald-800 text-white hero-section">
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
@@ -165,7 +177,6 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        {/* Slideshow Navigation Dots */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {heroImages.map((_, index) => (
             <button
@@ -179,7 +190,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Partners Section with Infinite Scroll */}
       <div className="py-16 bg-white mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
@@ -206,7 +216,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section de présentation */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Grison-Club, c'est quoi ?</h2>
@@ -236,7 +245,6 @@ const Home = () => {
       </div>
 
 
-      {/* Impact Numbers avec nouveau design */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
@@ -272,7 +280,46 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Objectives Grid */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-8 mb-8">
+            <div className="relative w-[250px] h-[250px] mx-auto">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
+                <img
+                  src={heroImages[currentSlide].url}
+                  alt="Image rotative 1"
+                  className={`w-full h-full object-cover card-image ${
+                    isTransitioning ? 'fade-out' : 'fade-in'
+                  }`}
+                />
+              </div>
+            </div>
+            <div className="relative w-[250px] h-[250px] mx-auto">
+              <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src={heroImages[(currentSlide + 1) % heroImages.length].url}
+                  alt="Image rotative 2"
+                  className={`w-full h-full object-cover card-image ${
+                    isTransitioning ? 'fade-out' : 'fade-in'
+                  }`}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="relative w-[250px] h-[250px] mx-auto">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+              <img
+                src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                alt="Image rotative 3"
+                className={`w-full h-full object-cover card-image ${
+                  isTransitioning ? 'fade-out' : 'fade-in'
+                }`}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -293,7 +340,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Testimonials Section */}
       <div className="bg-emerald-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Témoignages</h2>
@@ -311,7 +357,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Call to Action Section */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt.e à faire partie de l'action ?</h2>
@@ -333,7 +378,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Recent Activities Section */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
