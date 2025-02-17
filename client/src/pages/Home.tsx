@@ -289,7 +289,7 @@ const Home = () => {
                   src={heroImages[currentSlide].url}
                   alt="Image rotative 1"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide}
+                  key={`card-1-${currentSlide}`}
                 />
               </div>
             </div>
@@ -299,7 +299,7 @@ const Home = () => {
                   src={heroImages[(currentSlide + 1) % heroImages.length].url}
                   alt="Image rotative 2"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide +1}
+                  key={`card-2-${currentSlide}`}
                 />
               </div>
             </div>
@@ -309,7 +309,7 @@ const Home = () => {
                   src={heroImages[(currentSlide + 2) % heroImages.length].url}
                   alt="Image rotative 3"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide + 2}
+                  key={`card-3-${currentSlide}`}
                 />
               </div>
             </div>
@@ -323,7 +323,7 @@ const Home = () => {
                   src={heroImages[(currentSlide + 3) % heroImages.length].url}
                   alt="Image rotative 4"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide + 3}
+                  key={`card-4-${currentSlide}`}
                 />
               </div>
             </div>
@@ -333,7 +333,7 @@ const Home = () => {
                   src={heroImages[(currentSlide + 4) % heroImages.length].url}
                   alt="Image rotative 5"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide + 4}
+                  key={`card-5-${currentSlide}`}
                 />
               </div>
             </div>
@@ -343,7 +343,7 @@ const Home = () => {
                   src={heroImages[(currentSlide + 5) % heroImages.length].url}
                   alt="Image rotative 6"
                   className="w-full h-full object-cover card-image"
-                  key={currentSlide + 5}
+                  key={`card-6-${currentSlide}`}
                 />
               </div>
             </div>

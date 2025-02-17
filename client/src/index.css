@@ -34,14 +34,6 @@
 
     --radius: 0.5rem;
   }
-
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
 }
 
 /* Animation pour le défilement des logos */
@@ -81,23 +73,29 @@
 /* Animation de transition des images */
 .card-image {
   opacity: 1;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+  filter: blur(0);
 }
 
 .card-image-enter {
   opacity: 0;
+  filter: blur(8px);
 }
 
 .card-image-enter-active {
   opacity: 1;
+  filter: blur(0);
 }
 
 .card-image-exit {
   opacity: 1;
+  filter: blur(0);
 }
 
 .card-image-exit-active {
   opacity: 0;
+  filter: blur(8px);
 }
 
 .hero-section {
