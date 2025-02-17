@@ -35,20 +35,16 @@ const partners = [
 
 const heroImages = [
   {
-    url: "/img/activite-1.jpg",
-    caption: "Randonnée en groupe et team building"
+    url: "./attached_assets/Capture d'écran 2025-02-17 095609.png",
+    caption: "Groupe lors d'une activité en plein air"
   },
   {
-    url: "/img/activite-2.jpg",
-    caption: "Atelier participatif et échanges culturels"
+    url: "./attached_assets/Capture d'écran 2025-02-17 095622.png",
+    caption: "Atelier participatif communautaire"
   },
   {
-    url: "/img/activite-3.jpg",
-    caption: "Sensibilisation et éducation environnementale"
-  },
-  {
-    url: "/img/activite-4.jpg",
-    caption: "Activités de groupe et partage d'expériences"
+    url: "./attached_assets/Capture d'écran 2025-02-17 095609.png",
+    caption: "Activités de sensibilisation environnementale"
   }
 ];
 
@@ -285,17 +281,17 @@ const Home = () => {
               Découvrez nos actions et nos membres en action
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {heroImages.map((image, index) => (
               <div 
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
               >
-                <div className="aspect-w-4 aspect-h-3">
+                <div className="relative pb-[75%]">
                   <img
                     src={image.url}
                     alt={image.caption}
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-4">
