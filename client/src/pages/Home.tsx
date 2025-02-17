@@ -388,23 +388,35 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-8">Prêt.e à faire partie de l'action ?</h2>
-          <p className="text-xl mb-8">Participez à nos projets en Guinée et à l'international</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/clubs"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700"
-            >
-              Découvrir nos clubs
-            </Link>
-            <Link
-              href="/membership"
-              className="inline-flex items-center px-6 py-3 border border-emerald-800 text-base font-medium rounded-md text-emerald-800 bg-white hover:bg-emerald-50"
-            >
-              Devenir membre
-            </Link>
+      {/* Section "Prêt·e à faire partie de l'action ?" */}
+      <div className="bg-[#FFF8E1] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center">
+            <img 
+              src="/img/handshake-icon.svg" 
+              alt="Icône poignée de main"
+              className="w-24 h-24 mb-6"
+            />
+            <h2 className="text-[2.5rem] font-bold text-[#1D3A34] mb-4">
+              Prêt·e à faire partie de l'action ?
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Participez à nos projets de volontariat en France ou à l'international
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/volunteer"
+                className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors"
+              >
+                Devenir volontaire
+              </Link>
+              <Link
+                href="/join"
+                className="px-6 py-3 bg-[#00A67E] text-white rounded-lg hover:bg-[#00A67E]/90 transition-colors"
+              >
+                Adhérer à l'association
+              </Link>
+            </div>
           </div>
         </div>
       </div>
