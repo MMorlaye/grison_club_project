@@ -191,28 +191,10 @@ const Home = () => {
               className={`flex space-x-8 ${!isPaused ? 'animate-scroll' : ''}`}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
-              style={{
-                animationPlayState: isPaused ? 'paused' : 'running',
-                transition: 'animation-play-state 0.3s ease'
-              }}
             >
-              {partners.map((partner, index) => (
+              {[...partners, ...partners].map((partner, index) => (
                 <div
-                  key={`partner1-${index}`}
-                  className="flex-none w-48 h-32 filter grayscale hover:grayscale-0 transition-all duration-300"
-                >
-                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
-              {partners.map((partner, index) => (
-                <div
-                  key={`partner2-${index}`}
+                  key={`partner-${index}`}
                   className="flex-none w-48 h-32 filter grayscale hover:grayscale-0 transition-all duration-300"
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
