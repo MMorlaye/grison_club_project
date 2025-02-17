@@ -393,8 +393,8 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <img 
-              src="/img/handshake-icon.svg" 
-              alt="Icône poignée de main"
+              src="/img/heart-icon.svg" 
+              alt="Icône cœur"
               className="w-24 h-24 mb-6"
             />
             <h2 className="text-[2.5rem] font-bold text-[#1D3A34] mb-4">
