@@ -34,19 +34,23 @@ const partners = [
 ];
 
 const heroImages = [
-    {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Sensibilisation environnementale"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Échange intergénérationnel"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      caption: "Actions solidaires"
-    }
-  ];
+  {
+    url: "/img/activite-1.jpg",
+    caption: "Randonnée en groupe et team building"
+  },
+  {
+    url: "/img/activite-2.jpg",
+    caption: "Atelier participatif et échanges culturels"
+  },
+  {
+    url: "/img/activite-3.jpg",
+    caption: "Sensibilisation et éducation environnementale"
+  },
+  {
+    url: "/img/activite-4.jpg",
+    caption: "Activités de groupe et partage d'expériences"
+  }
+];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -268,6 +272,72 @@ const Home = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Galerie d'images */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Notre impact en images</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Découvrez nos actions et nos membres en action
+            </p>
+          </div>
+          <div className="relative h-[500px] rounded-xl overflow-hidden">
+            {/* Images */}
+            {heroImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={image.url}
+                  alt={image.caption}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
+                  <p className="text-white text-xl font-medium">
+                    {image.caption}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* Navigation dots */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {heroImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide 
+                      ? 'bg-white' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                  aria-label={`Aller à l'image ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation arrows */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
+              aria-label="Image précédente"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % heroImages.length)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
+              aria-label="Image suivante"
+            >
+              →
+            </button>
           </div>
         </div>
       </div>
