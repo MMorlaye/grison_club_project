@@ -5,72 +5,55 @@ import { Link } from 'wouter';
 const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "/assets/OfficeNationalTourisme.png"
+      logo: "./img/Plan-de-travail-2-1.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "/assets/CEDEAO.jpg"
+      logo: "./img/Le-logo-de-la-CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "/assets/UA.png"
+      logo: "./img/UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "/assets/UNESCO.jpg"
+      logo: "./img/unesco-logo-260px.jpg"
     },
     { 
       name: "ONU", 
-      logo: "/assets/ONU.jpg"
+      logo: "./img/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "/assets/Guinee.png"
+      logo: "./img/images.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "/assets/UnionEuropeenne.jpg"
+      logo: "./img/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
     }
 ];
 
-// Images pour le hero slider
-const heroSlideImages = [
-  {
-    url: "/assets/hero1.jpg",
-    caption: "Notre engagement pour l'avenir"
-  },
-  {
-    url: "/assets/hero2.jpg",
-    caption: "Agir ensemble pour le changement"
-  },
-  {
-    url: "/assets/hero3.jpg",
-    caption: "Former les leaders de demain"
-  }
-];
-
-// Images pour la galerie
-const galleryImages = [
-  {
-    url: "/assets/gallery1.jpg",
-    caption: "Groupe lors d'une activité en plein air"
-  },
-  {
-    url: "/assets/gallery2.jpg",
-    caption: "Atelier participatif communautaire"
-  },
-  {
-    url: "/assets/gallery3.jpg",
-    caption: "Activités de sensibilisation environnementale"
-  }
-];
+const heroImages = [
+    {
+      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      caption: "Sensibilisation environnementale"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      caption: "Échange intergénérationnel"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      caption: "Actions solidaires"
+    }
+  ];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlideImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 10000); 
     return () => clearInterval(timer);
   }, []);
@@ -149,7 +132,7 @@ const Home = () => {
       {/* Hero Section with Slideshow */}
       <div className="relative bg-emerald-800 text-white hero-section">
         <div className="absolute inset-0">
-          {heroSlideImages.map((image, index) => (
+          {heroImages.map((image, index) => (
             <img
               key={index}
               src={image.url}
@@ -184,7 +167,7 @@ const Home = () => {
         </div>
         {/* Slideshow Navigation Dots */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {heroSlideImages.map((_, index) => (
+          {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
@@ -285,39 +268,6 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Galerie d'images */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Notre impact en images</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Découvrez nos actions et nos membres en action
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
-              >
-                <div className="relative pb-[75%]">
-                  <img
-                    src={image.url}
-                    alt={image.caption}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="text-gray-800 font-medium">
-                    {image.caption}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
