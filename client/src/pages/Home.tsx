@@ -243,7 +243,6 @@ const Home = () => {
       </div>
 
 
-
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
@@ -351,22 +350,79 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-16 bg-white">
+      {/* Section Objectifs with new design */}
+      <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Nos Objectifs</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Découvrez les piliers de notre engagement pour un monde meilleur
+            <h2 className="text-4xl font-bold text-emerald-800">Nos Missions</h2>
+            <p className="mt-4 text-xl text-gray-600">
+              À Solidarités Jeunesses, on fait quoi ?
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {objectives.map((objective, index) => (
-              <div key={index} className="p-6 bg-emerald-50 rounded-lg transform transition duration-300 hover:scale-105">
-                {objective.icon}
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">{objective.title}</h3>
-                <p className="mt-2 text-gray-600">{objective.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Carte Volontariats */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Volontariats"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Volontariats</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Engagez-vous dans des projets internationaux et locaux pour faire la différence.
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* Carte Formations */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Formations"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Formations</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Développez vos compétences et votre leadership à travers nos programmes de formation.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Lutte contre les exclusions */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Lutte contre les exclusions"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Lutte contre les exclusions</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Agissez pour une société plus inclusive et solidaire.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Animer un chantier */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Animer un chantier"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Animer un chantier</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Coordonnez des projets collectifs et développez vos compétences d'animation.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
