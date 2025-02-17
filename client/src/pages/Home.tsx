@@ -5,45 +5,62 @@ import { Link } from 'wouter';
 const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "./img/Plan-de-travail-2-1.png"
+      logo: "/assets/OfficeNationalTourisme.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "./img/Le-logo-de-la-CEDEAO.jpg"
+      logo: "/assets/CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "./img/UA.png"
+      logo: "/assets/UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "./img/unesco-logo-260px.jpg"
+      logo: "/assets/UNESCO.jpg"
     },
     { 
       name: "ONU", 
-      logo: "./img/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+      logo: "/assets/ONU.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "./img/images.png"
+      logo: "/assets/Guinee.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "./img/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+      logo: "/assets/UnionEuropeenne.jpg"
     }
 ];
 
-const heroImages = [
+// Images pour le hero slider
+const heroSlideImages = [
   {
-    url: "./attached_assets/Capture d'écran 2025-02-17 095609.png",
+    url: "/assets/hero1.jpg",
+    caption: "Notre engagement pour l'avenir"
+  },
+  {
+    url: "/assets/hero2.jpg",
+    caption: "Agir ensemble pour le changement"
+  },
+  {
+    url: "/assets/hero3.jpg",
+    caption: "Former les leaders de demain"
+  }
+];
+
+// Images pour la galerie
+const galleryImages = [
+  {
+    url: "/assets/gallery1.jpg",
     caption: "Groupe lors d'une activité en plein air"
   },
   {
-    url: "./attached_assets/Capture d'écran 2025-02-17 095622.png",
+    url: "/assets/gallery2.jpg",
     caption: "Atelier participatif communautaire"
   },
   {
-    url: "./attached_assets/Capture d'écran 2025-02-17 095609.png",
+    url: "/assets/gallery3.jpg",
     caption: "Activités de sensibilisation environnementale"
   }
 ];
@@ -53,7 +70,7 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroSlideImages.length);
     }, 10000); 
     return () => clearInterval(timer);
   }, []);
@@ -132,7 +149,7 @@ const Home = () => {
       {/* Hero Section with Slideshow */}
       <div className="relative bg-emerald-800 text-white hero-section">
         <div className="absolute inset-0">
-          {heroImages.map((image, index) => (
+          {heroSlideImages.map((image, index) => (
             <img
               key={index}
               src={image.url}
@@ -167,7 +184,7 @@ const Home = () => {
         </div>
         {/* Slideshow Navigation Dots */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {heroImages.map((_, index) => (
+          {heroSlideImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
@@ -282,7 +299,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {heroImages.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <div 
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
