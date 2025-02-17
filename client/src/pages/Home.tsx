@@ -5,38 +5,35 @@ import { Link } from 'wouter';
 const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "attached_assets/Plan-de-travail-2-1.png"
+      logo: "Plan-de-travail-2-1.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "attached_assets/Le-logo-de-la-CEDEAO.jpg"
+      logo: "Le-logo-de-la-CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "attached_assets/UA.png"
+      logo: "UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "attached_assets/unesco-logo-260px.jpg"
+      logo: "unesco-logo-260px.jpg"
     },
     { 
       name: "ONU", 
-      logo: "attached_assets/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+      logo: "la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "attached_assets/images.png"
+      logo: "images.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "attached_assets/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+      logo: "120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
     }
   ];
 
-const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const heroImages = [
+const heroImages = [
     {
       url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
       caption: "Sensibilisation environnementale"
@@ -50,6 +47,9 @@ const Home = () => {
       caption: "Actions solidaires"
     }
   ];
+
+const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -87,7 +87,6 @@ const Home = () => {
       description: "Formation de leaders bénévoles engagés"
     }
   ];
-
 
   const recentActivities = [
     {
@@ -195,7 +194,7 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={partner.logo} 
+                      src={`/img/${partner.logo}`} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
@@ -209,7 +208,7 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={partner.logo} 
+                      src={`/img/${partner.logo}`} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
