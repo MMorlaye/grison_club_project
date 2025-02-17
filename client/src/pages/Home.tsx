@@ -138,7 +138,7 @@ const Home = () => {
               src={image.url}
               alt={image.caption}
               className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
+                index === currentSlide ? 'opacity-20' : 'opacity-0'
               }`}
             />
           ))}
