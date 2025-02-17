@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen, Handshake, MessageSquare, Award } from 'lucide-react';
+import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen } from 'lucide-react';
 import { Link } from 'wouter';
 
 const partners = [
     { 
       name: "Office National du Tourisme", 
-      logo: "Plan-de-travail-2-1.png"
+      logo: "/img/Plan-de-travail-2-1.png"
     },
     { 
       name: "CEDEAO", 
-      logo: "Le-logo-de-la-CEDEAO.jpg"
+      logo: "/img/Le-logo-de-la-CEDEAO.jpg"
     },
     { 
       name: "Union Africaine", 
-      logo: "UA.png"
+      logo: "/img/UA.png"
     },
     { 
       name: "UNESCO", 
-      logo: "unesco-logo-260px.jpg"
+      logo: "/img/unesco-logo-260px.jpg"
     },
     { 
       name: "ONU", 
-      logo: "la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
+      logo: "/img/la-77e-assemblee-generale-de-l-onu-se-tient-dans-un-monde-fragmente_image_1.jpg"
     },
     { 
       name: "Guinée", 
-      logo: "images.png"
+      logo: "/img/images.png"
     },
     { 
       name: "Union Européenne", 
-      logo: "120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
+      logo: "/img/120711718-fond-clair-avec-le-drapeau-de-l-union-européenne-joyeux-fond-de-la-journée-de-l-europe.jpg"
     }
-  ];
+];
 
 const heroImages = [
     {
@@ -194,13 +194,14 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={`/img/${partner.logo}`} 
+                      src={partner.logo} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
                 </div>
               ))}
+              {/* Duplicate pour l'animation infinie */}
               {partners.map((partner, index) => (
                 <div
                   key={`partner2-${index}`}
@@ -208,7 +209,7 @@ const Home = () => {
                 >
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
                     <img 
-                      src={`/img/${partner.logo}`} 
+                      src={partner.logo} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />
