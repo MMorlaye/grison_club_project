@@ -216,7 +216,7 @@ const Home = () => {
 
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="presentation-title">Grison-Club, c'est quoi ?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Grison-Club, c'est quoi ?</h2>
           <div className="space-y-6 presentation-text">
             <p>
               Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
@@ -242,6 +242,85 @@ const Home = () => {
         </div>
       </div>
 
+
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 text-center">Nos Missions</h2>
+            <p className="mt-6 missions-question">
+              À Grison Club, on fait quoi ?
+            </p>
+            <p className="mt-4 missions-intro">
+              Notre association s'engage dans quatre domaines d'intervention majeurs, chacun contribuant à notre vision d'une société plus équitable et durable. Découvrez nos actions dans ces différents domaines :
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Carte Éducation */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Éducation"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Éducation</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Soutien à l'apprentissage et au développement des compétences des jeunes.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Environnement */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Environnement"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Environnement</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Protection de l'environnement et sensibilisation écologique.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Culture */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Culture"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Culture</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Promotion des cultures locales et du patrimoine guinéen.
+                </p>
+              </div>
+            </div>
+
+            {/* Carte Volontariat */}
+            <div className="group relative h-80 overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="Volontariat"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-emerald-900/70 transition-opacity duration-300 group-hover:opacity-75"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Volontariat</h3>
+                <p className="text-white/90 transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                  Formation et engagement de leaders bénévoles pour servir la communauté.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="bg-emerald-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
