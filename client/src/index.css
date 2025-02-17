@@ -108,7 +108,8 @@
 }
 
 .presentation-text {
-  @apply text-xl leading-relaxed text-gray-700;
+  font-family: 'Montserrat', sans-serif;
+  @apply text-xl leading-relaxed text-gray-700 font-semibold;
 }
 
 .testimonial-text {
@@ -125,4 +126,9 @@
 .missions-intro {
   font-family: 'Montserrat', sans-serif;
   @apply text-xl font-semibold text-gray-700 leading-relaxed;
+}
+
+.about-title {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-3xl font-bold text-gray-900 mb-6;
 }
