@@ -46,36 +46,24 @@ const heroImages = [
       url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
       caption: "Actions solidaires"
     }
-  ];
+];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const heroTimer = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 10000);
-
-    const cardTimer = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-        setIsTransitioning(false);
-      }, 1000);
-    }, 8000);
-
-    return () => {
-      clearInterval(heroTimer);
-      clearInterval(cardTimer);
-    };
+    return () => clearInterval(timer);
   }, []);
 
   const impactNumbers = [
     { number: "+2000", label: "Projets de volontariat à l'international" },
     { number: "+100", label: "Projets de volontariat en France" },
     { number: "+300", label: "Volontaires français·e·s à l'international" },
-    { number: "+1000", label: "Volontaires en France" }
+    { number: "+1000", label: "Volontaires en France" },
+    { number: "+100", label: "Volontaires en Service Civique" }
   ];
 
   const objectives = [
@@ -149,8 +137,8 @@ const Home = () => {
               key={index}
               src={image.url}
               alt={image.caption}
-              className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-20' : 'opacity-0'
+              className={`absolute w-full h-full object-cover ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             />
           ))}
@@ -288,9 +276,7 @@ const Home = () => {
                 <img
                   src={heroImages[currentSlide].url}
                   alt="Image rotative 1"
-                  className={`w-full h-full object-cover card-image ${
-                    isTransitioning ? 'fade-out' : 'fade-in'
-                  }`}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -299,9 +285,7 @@ const Home = () => {
                 <img
                   src={heroImages[(currentSlide + 1) % heroImages.length].url}
                   alt="Image rotative 2"
-                  className={`w-full h-full object-cover card-image ${
-                    isTransitioning ? 'fade-out' : 'fade-in'
-                  }`}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -311,9 +295,7 @@ const Home = () => {
               <img
                 src={heroImages[(currentSlide + 2) % heroImages.length].url}
                 alt="Image rotative 3"
-                className={`w-full h-full object-cover card-image ${
-                  isTransitioning ? 'fade-out' : 'fade-in'
-                }`}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
