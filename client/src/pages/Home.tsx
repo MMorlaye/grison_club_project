@@ -2,17 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen } from 'lucide-react';
 import { Link } from 'wouter';
 
-// Définition des types pour la galerie d'images
-interface ImageData {
-  url: string;
-  title: string;
-}
-
-interface ImageGallerySet {
-  set1: ImageData[];
-  set2: ImageData[];
-}
-
 const partners = [
     { 
       name: "Office National du Tourisme", 
@@ -59,54 +48,13 @@ const heroImages = [
     }
   ];
 
-const imageGalleryData: ImageGallerySet[] = [
-  {
-    set1: [
-      {
-        url: "https://images.unsplash.com/photo-1552664730-d307ca884978",
-        title: "Sensibilisation environnementale",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846",
-        title: "Atelier participatif",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b",
-        title: "Action communautaire",
-      },
-    ],
-    set2: [
-      {
-        url: "https://images.unsplash.com/photo-1591474200742-8e512e6f98f8",
-        title: "Formation des jeunes",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1509062522246-3755977927d7",
-        title: "Rencontre interculturelle",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1526976668912-1a811878dd37",
-        title: "Activité de groupe",
-      },
-    ],
-  },
-];
-
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentImageSet, setCurrentImageSet] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 10000); 
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageSet((prev) => (prev === 0 ? 1 : 0));
-    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
@@ -320,34 +268,6 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Section Galerie d'Images Dynamique */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Notre Impact en Images</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-            {imageGalleryData[0][currentImageSet ? 'set2' : 'set1'].map((image: ImageData, index: number) => (
-              <div
-                key={index}
-                className={`relative aspect-[4/3] overflow-hidden rounded-2xl transform transition-all duration-700 hover:scale-105 ${
-                  index === 1 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
-              >
-                <img
-                  src={image.url}
-                  alt={image.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">{image.title}</h3>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
