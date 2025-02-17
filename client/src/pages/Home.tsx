@@ -356,7 +356,7 @@ const Home = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-emerald-800">Nos Missions</h2>
             <p className="mt-4 text-xl text-gray-600">
-              À Solidarités Jeunesses, on fait quoi ?
+              À Grison Club, on fait quoi ?
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
