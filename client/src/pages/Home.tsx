@@ -285,59 +285,26 @@ const Home = () => {
               Découvrez nos actions et nos membres en action
             </p>
           </div>
-          <div className="relative h-[500px] rounded-xl overflow-hidden">
-            {/* Images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {heroImages.map((image, index) => (
-              <div
+              <div 
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
               >
-                <img
-                  src={image.url}
-                  alt={image.caption}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-                  <p className="text-white text-xl font-medium">
+                <div className="aspect-w-4 aspect-h-3">
+                  <img
+                    src={image.url}
+                    alt={image.caption}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-gray-800 font-medium">
                     {image.caption}
                   </p>
                 </div>
               </div>
             ))}
-
-            {/* Navigation dots */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {heroImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide 
-                      ? 'bg-white' 
-                      : 'bg-white/50 hover:bg-white/75'
-                  }`}
-                  aria-label={`Aller à l'image ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Navigation arrows */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
-              aria-label="Image précédente"
-            >
-              ←
-            </button>
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % heroImages.length)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
-              aria-label="Image suivante"
-            >
-              →
-            </button>
           </div>
         </div>
       </div>
