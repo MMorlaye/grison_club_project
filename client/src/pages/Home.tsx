@@ -188,7 +188,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section Partenaires */}
       <div className="py-16 bg-white mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
@@ -215,8 +214,35 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section Statistiques */}
-      <div className="py-16 bg-gray-50">
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="about-title">Grison-Club, c'est quoi ?</h2>
+          <div className="space-y-6 presentation-text">
+            <p>
+              Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
+            </p>
+            <p>
+              En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.
+            </p>
+            <blockquote className="testimonial-text bg-white p-6 rounded-lg shadow-lg my-8">
+              « Ce qui m'a marqué, c'est l'équilibre entre les actions concrètes, comme planter des arbres, et les réflexions sur notre rôle dans la société. Les formations m'ont aidé à développer mon leadership, et les rencontres avec d'autres membres ont été inspirantes. Grison-Club m'a permis de grandir tout en servant ma communauté. »
+              <footer className="mt-2 text-base font-normal text-gray-600">
+                Fatou, 19 ans, membre active du Grison Youth Club
+              </footer>
+            </blockquote>
+            <div className="mt-8">
+              <Link
+                href="/about"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700 transition-colors"
+              >
+                En savoir plus
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
             <div className="flex flex-wrap justify-between gap-8">
@@ -251,36 +277,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section "Grison Club c'est quoi ?" */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="about-title">Grison-Club, c'est quoi ?</h2>
-          <div className="space-y-6 presentation-text">
-            <p>
-              Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
-            </p>
-            <p>
-              En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.
-            </p>
-            <blockquote className="testimonial-text bg-white p-6 rounded-lg shadow-lg my-8">
-              « Ce qui m'a marqué, c'est l'équilibre entre les actions concrètes, comme planter des arbres, et les réflexions sur notre rôle dans la société. Les formations m'ont aidé à développer mon leadership, et les rencontres avec d'autres membres ont été inspirantes. Grison-Club m'a permis de grandir tout en servant ma communauté. »
-              <footer className="mt-2 text-base font-normal text-gray-600">
-                Fatou, 19 ans, membre active du Grison Youth Club
-              </footer>
-            </blockquote>
-            <div className="mt-8">
-              <Link
-                href="/about"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-700 transition-colors"
-              >
-                En savoir plus
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Section Galerie */}
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Première rangée avec 3 cartes */}
@@ -353,7 +349,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section Nos Missions */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
@@ -433,7 +428,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section Témoignages */}
       <div className="bg-emerald-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Témoignages</h2>
@@ -451,7 +445,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section "Prêt·e à faire partie de l'action ?" */}
       <div className="bg-[#FFF8E1] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
