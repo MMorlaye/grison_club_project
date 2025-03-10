@@ -215,6 +215,42 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section Statistiques */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
+            <div className="flex flex-wrap justify-between gap-8">
+              {impactNumbers.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="flex-1 min-w-[200px] bg-gradient-to-br from-emerald-50 to-white rounded-lg shadow-lg p-8 border-2 border-emerald-600 transform transition-transform hover:scale-105"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="text-emerald-800">
+                      <svg 
+                        viewBox="0 0 24 24" 
+                        className={`w-8 h-8 transform ${index === 1 || index === 3 ? '' : 'rotate-180'}`} 
+                        fill="currentColor"
+                      >
+                        <path d="M12 2L2 22h20L12 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold text-emerald-600 mb-3">
+                        {item.number}
+                      </div>
+                      <div className="text-base text-gray-600">
+                        {item.label}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Section "Grison Club c'est quoi ?" */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
