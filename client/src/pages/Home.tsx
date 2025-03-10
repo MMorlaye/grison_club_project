@@ -188,6 +188,33 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section Partenaires */}
+      <div className="py-16 bg-white mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
+            Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
+          </h2>
+          <div className="relative overflow-hidden">
+            <div className="animate-scroll">
+              {[...partners, ...partners].map((partner, index) => (
+                <div
+                  key={`partner-${index}`}
+                  className="inline-flex flex-none w-48 h-32 mx-4 filter grayscale hover:grayscale-0 transition-all duration-300"
+                >
+                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Section "Grison Club c'est quoi ?" */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
