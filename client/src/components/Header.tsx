@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
-import { LanguageSelector } from './LanguageSelector';
-import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { t } = useTranslation();
 
   const navigation = [
     { name: 'Qui sommes-nous ?', href: '/about' },
@@ -36,7 +33,6 @@ const Header = () => {
                 </a>
               </Link>
             ))}
-            <LanguageSelector />
             <Link href="/login">
               <a className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-emerald-800 hover:bg-emerald-700">
                 Se connecter
@@ -45,8 +41,7 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-4">
-            <LanguageSelector />
+          <div className="lg:hidden">
             <button
               type="button"
               className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100"
