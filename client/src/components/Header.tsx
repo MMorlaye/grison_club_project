@@ -20,7 +20,7 @@ const Header = () => {
             <Link href="/">
               <a>
                 <img 
-                  src="/img/grison-logo.png" 
+                  src="/Logo-removebg-preview.png" 
                   alt="Grison Club Logo"
                   className="h-16 w-auto object-contain"
                 />
