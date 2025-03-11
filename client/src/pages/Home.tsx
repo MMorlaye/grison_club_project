@@ -260,41 +260,6 @@ const Home = () => {
 
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-800 rounded-xl p-12 shadow-2xl">
-            <div className="flex flex-wrap justify-between gap-8">
-              {impactNumbers.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="flex-1 min-w-[200px] bg-gradient-to-br from-emerald-50 to-white rounded-lg shadow-lg p-8 border-2 border-emerald-600 transform transition-transform hover:scale-105"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-emerald-800">
-                      <svg 
-                        viewBox="0 0 24 24" 
-                        className={`w-8 h-8 transform ${index === 1 || index === 3 ? '' : 'rotate-180'}`} 
-                        fill="currentColor"
-                      >
-                        <path d="M12 2L2 22h20L12 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-4xl font-bold text-emerald-600 mb-3">
-                        {item.number}
-                      </div>
-                      <div className="text-base text-gray-600">
-                        {item.label}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Première rangée avec 3 cartes */}
           <div className="grid grid-cols-3 gap-4 mb-16">
             <div className="relative w-[250px] h-[250px] mx-auto">
@@ -493,7 +458,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white py-16">
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Actualités</h2>
@@ -529,30 +494,14 @@ const Home = () => {
 
       <footer className="bg-[#1B4842] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center md:text-left">
               <img src="/img/logo-white.png" alt="Grison Club" className="h-12 mb-4" />
               <p className="text-gray-300">
                 Ensemble pour un monde meilleur
               </p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Inscrivez-vous à notre newsletter</h3>
-              <form className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-300 border border-white/20 focus:outline-none focus:border-white"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500"
-                >
-                  S'inscrire
-                </button>
-              </form>
-            </div>
-            <div>
+            <div className="text-center">
               <h3 className="text-lg font-semibold mb-4">Navigation</h3>
               <ul className="space-y-2">
                 <li><Link href="/about" className="hover:text-emerald-300">À propos</Link></li>
@@ -561,9 +510,9 @@ const Home = () => {
                 <li><Link href="/contact" className="hover:text-emerald-300">Contact</Link></li>
               </ul>
             </div>
-            <div>
+            <div className="text-center md:text-right">
               <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
-              <div className="flex space-x-4">
+              <div className="flex justify-center md:justify-end space-x-4">
                 <a href="#" className="hover:text-emerald-300"><FaFacebook size={24} /></a>
                 <a href="#" className="hover:text-emerald-300"><FaTwitter size={24} /></a>
                 <a href="#" className="hover:text-emerald-300"><FaInstagram size={24} /></a>
