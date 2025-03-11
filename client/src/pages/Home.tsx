@@ -261,6 +261,28 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section Volontariat */}
+      <div className="bg-[#FFFBF5] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#0A4D44] mb-6">
+              Participez à une action de volontariat avec Solidarités Jeunesses
+            </h2>
+            <p className="text-lg text-gray-700 mb-12">
+              Si vous souhaitez investir votre temps et votre énergie pour contribuer à un projet d'intérêt général, et que vous avez le désir de partir à la rencontre d'une communauté d'accueil, alors devenez volontaire !
+            </p>
+            <blockquote className="bg-[#E8F0FE] p-8 rounded-lg shadow-lg mb-6">
+              <p className="text-2xl text-[#6B7DB3] italic mb-4">
+                « Si tu es venu·e pour m'aider, tu perds ton temps. Mais si tu es venu·e parce que tu penses que ta libération est liée à la mienne, alors travaillons ensemble »
+              </p>
+              <footer className="text-right text-gray-600">
+                Lilla Watson - militante autochtone et éducatrice, Queensland 1970
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
       <div className="py-16 bg-white">
         {/* Première rangée avec 3 cartes */}
         <div className="grid grid-cols-3 gap-4 mb-16">
