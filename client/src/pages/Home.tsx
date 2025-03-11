@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen } from 'lucide-react';
 import { Link } from 'wouter';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Added imports
 
 const partners = [
     { 
@@ -137,6 +138,21 @@ const Home = () => {
       role: "Porteuse de projet"
     }
   ];
+
+  // Placeholder for Article component - needs to be implemented separately.
+  const Article = ({ id, title, date, image, description, slug }) => (
+    <div key={id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <div className="text-sm text-emerald-800 font-semibold mb-2">{date}</div>
+        <Link href={`/news/${slug}`}>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+        </Link>
+        <p className="text-gray-600 mb-4">{description}</p>
+      </div>
+    </div>
+  );
+
 
   return (
     <div>
@@ -480,38 +496,86 @@ const Home = () => {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Nos actions récentes</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Actualités</h2>
             <p className="mt-4 text-lg text-gray-600">
-              Découvrez nos dernières initiatives et leur impact
+              Restez informé des dernières nouvelles de l'association
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentActivities.map((activity, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                <img
-                  src={activity.image}
-                  alt={activity.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <div className="text-sm text-emerald-800 font-semibold mb-2">{activity.date}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-                  <p className="text-gray-600 mb-4">{activity.description}</p>
-                </div>
-              </div>
+              <Article
+                key={index}
+                id={index}
+                title={activity.title}
+                date={activity.date}
+                image={activity.image}
+                description={activity.description}
+                slug={activity.title.toLowerCase().replace(/ /g, '-')}
+              />
             ))}
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/activities"
+              href="/news"
               className="inline-flex items-center px-6 py-3 border border-emerald-800 text-base font-medium rounded-md text-emerald-800 hover:bg-emerald-50"
             >
-              Voir toutes nos actions
+              Voir toutes les actualités
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </div>
+
+
+      <footer className="bg-[#1B4842] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <img src="/img/logo-white.png" alt="Grison Club" className="h-12 mb-4" />
+              <p className="text-gray-300">
+                Ensemble pour un monde meilleur
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Inscrivez-vous à notre newsletter</h3>
+              <form className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Votre email"
+                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-300 border border-white/20 focus:outline-none focus:border-white"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500"
+                >
+                  S'inscrire
+                </button>
+              </form>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+              <ul className="space-y-2">
+                <li><Link href="/about" className="hover:text-emerald-300">À propos</Link></li>
+                <li><Link href="/clubs" className="hover:text-emerald-300">Nos clubs</Link></li>
+                <li><Link href="/news" className="hover:text-emerald-300">Actualités</Link></li>
+                <li><Link href="/contact" className="hover:text-emerald-300">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="hover:text-emerald-300"><FaFacebook size={24} /></a>
+                <a href="#" className="hover:text-emerald-300"><FaTwitter size={24} /></a>
+                <a href="#" className="hover:text-emerald-300"><FaInstagram size={24} /></a>
+                <a href="#" className="hover:text-emerald-300"><FaLinkedin size={24} /></a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/20 pt-8 mt-8 text-center text-gray-300">
+            <p>&copy; 2025 Grison Club. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
