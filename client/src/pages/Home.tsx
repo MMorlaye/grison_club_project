@@ -501,6 +501,9 @@ const Home = () => {
               <p className="text-gray-300">
                 Ensemble pour un monde meilleur
               </p>
+              <p className="devise border-t border-white/20 pt-4 mt-4">
+                Travail - Rigueur - Réussite
+              </p>
             </div>
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-4">Navigation</h3>
