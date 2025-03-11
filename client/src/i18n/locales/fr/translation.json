@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Ensemble pour un monde meilleur",
+    "description": "Le Grison Club s'engage dans l'éducation, la culture et l'environnement pour créer un impact positif durable dans nos communautés.",
+    "buttons": {
+      "learnMore": "En savoir plus",
+      "joinUs": "Nous rejoindre"
+    }
+  },
+  "partners": {
+    "title": "Dans la réalisation de nos actions, nous sommes soutenu·e·s par :"
+  },
+  "about": {
+    "title": "Grison-Club, c'est quoi ?",
+    "description1": "Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.",
+    "description2": "En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.",
+    "learnMore": "En savoir plus"
+  },
+  "missions": {
+    "title": "Nos Missions",
+    "question": "À Grison Club, on fait quoi ?",
+    "description": "Notre association s'engage dans quatre domaines d'intervention majeurs, chacun contribuant à notre vision d'une société plus équitable et durable. Découvrez nos actions dans ces différents domaines :",
+    "cards": {
+      "education": {
+        "title": "Éducation",
+        "description": "Soutien à l'apprentissage et au développement des compétences des jeunes"
+      },
+      "environment": {
+        "title": "Environnement",
+        "description": "Protection de l'environnement et sensibilisation écologique"
+      },
+      "culture": {
+        "title": "Culture",
+        "description": "Promotion des cultures locales et du patrimoine guinéen"
+      },
+      "volunteering": {
+        "title": "Volontariat",
+        "description": "Formation et engagement de leaders bénévoles pour servir la communauté"
+      }
+    }
+  },
+  "callToAction": {
+    "title": "Prêt·e à faire partie de l'action ?",
+    "description": "Impliquez-vous et contribuez à des projets pour impacter positivement votre communauté.",
+    "buttons": {
+      "discover": "Découvrir nos clubs",
+      "join": "Adhérer à l'association"
+    }
+  },
+  "news": {
+    "title": "Actualités",
+    "description": "Restez informé des dernières nouvelles de l'association",
+    "viewAll": "Voir toutes les actualités"
+  },
+  "footer": {
+    "slogan": "Ensemble pour un monde meilleur",
+    "newsletter": {
+      "title": "Inscrivez-vous à notre newsletter",
+      "placeholder": "Votre email",
+      "button": "S'inscrire"
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "À propos",
+      "clubs": "Nos clubs",
+      "news": "Actualités",
+      "contact": "Contact"
+    },
+    "social": {
+      "title": "Suivez-nous"
+    },
+    "copyright": "© 2025 Grison Club. Tous droits réservés."
+  }
+}

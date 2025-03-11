@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Together for a Better World",
+    "description": "Grison Club is committed to education, culture, and the environment to create lasting positive impact in our communities.",
+    "buttons": {
+      "learnMore": "Learn More",
+      "joinUs": "Join Us"
+    }
+  },
+  "partners": {
+    "title": "In carrying out our actions, we are supported by:"
+  },
+  "about": {
+    "title": "What is Grison-Club?",
+    "description1": "Grison-Club is a Guinean association committed to education, culture, environmental protection, and training young volunteer leaders to serve their communities. Through educational workshops, reforestation campaigns, cultural projects, and humanitarian actions, we work to strengthen youth skills and build resilient communities.",
+    "description2": "In partnership with affiliated clubs in Guinea and internationally, we organize dozens of local and international projects each year, mobilizing over 500 active members and hundreds of volunteers. Our regional delegations coordinate initiatives such as mobile libraries, leadership seminars, and sanitation operations, while our international network promotes solidarity between Africa, Europe, and beyond. Our goal? To train engaged citizens capable of contributing to sustainable and inclusive development.",
+    "learnMore": "Learn More"
+  },
+  "missions": {
+    "title": "Our Missions",
+    "question": "What do we do at Grison Club?",
+    "description": "Our association is engaged in four major areas of intervention, each contributing to our vision of a more equitable and sustainable society. Discover our actions in these different areas:",
+    "cards": {
+      "education": {
+        "title": "Education",
+        "description": "Supporting learning and youth skills development"
+      },
+      "environment": {
+        "title": "Environment",
+        "description": "Environmental protection and ecological awareness"
+      },
+      "culture": {
+        "title": "Culture",
+        "description": "Promotion of local cultures and Guinean heritage"
+      },
+      "volunteering": {
+        "title": "Volunteering",
+        "description": "Training and engaging volunteer leaders to serve the community"
+      }
+    }
+  },
+  "callToAction": {
+    "title": "Ready to be part of the action?",
+    "description": "Get involved and contribute to projects that positively impact your community.",
+    "buttons": {
+      "discover": "Discover our clubs",
+      "join": "Join the association"
+    }
+  },
+  "news": {
+    "title": "News",
+    "description": "Stay informed about the latest association news",
+    "viewAll": "View all news"
+  },
+  "footer": {
+    "slogan": "Together for a Better World",
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "placeholder": "Your email",
+      "button": "Subscribe"
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "About",
+      "clubs": "Our Clubs",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "copyright": "© 2025 Grison Club. All rights reserved."
+  }
+}
