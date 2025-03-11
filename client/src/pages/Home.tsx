@@ -171,7 +171,7 @@ const Home = () => {
         </div>
         <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            Ensemble pour un monde meilleur
+            Ensemble pour un monde meilleur avec le Grison Club
           </h1>
           <p className="devise border-t border-white/20 pt-4 mt-4">
             Travail - Rigueur - Réussite
@@ -261,15 +261,32 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section Volontariat */}
+      <div className="bg-emerald-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Témoignages</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-emerald-700 p-6 rounded-lg">
+                <p className="text-lg italic mb-4">"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="text-emerald-200">{testimonial.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Section Engagement */}
       <div className="bg-[#FFFBF5] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#0A4D44] mb-6">
-              Participez à une action de volontariat avec Solidarités Jeunesses
+              Participez à une action avec le Grison Club !
             </h2>
             <p className="text-lg text-gray-700 mb-12">
-              Si vous souhaitez investir votre temps et votre énergie pour contribuer à un projet d'intérêt général, et que vous avez le désir de partir à la rencontre d'une communauté d'accueil, alors devenez volontaire !
+              Si vous souhaitez vous engager dans des projets qui font la différence, partager vos compétences et contribuer au développement de votre communauté, rejoignez le Grison Club ! Ensemble, nous créons des opportunités d'apprentissage, de partage et d'action pour un impact positif durable.
             </p>
             <blockquote className="bg-[#E8F0FE] p-8 rounded-lg shadow-lg mb-6">
               <p className="text-2xl text-[#6B7DB3] italic mb-4">
@@ -279,6 +296,38 @@ const Home = () => {
                 Lilla Watson - militante autochtone et éducatrice, Queensland 1970
               </footer>
             </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#FFF8E1] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center">
+            <img 
+              src="/img/heart-icon.svg" 
+              alt="Icône cœur"
+              className="w-24 h-24 mb-6"
+            />
+            <h2 className="text-[2.5rem] font-bold text-[#1D3A34] mb-4">
+              Prêt·e à faire partie de l'action ?
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Impliquez-vous et contribuez à des projets pour impacter positivement votre communauté.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/clubs"
+                className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors"
+              >
+                Découvrir nos clubs
+              </Link>
+              <Link
+                href="/join"
+                className="px-6 py-3 bg-[#00A67E] text-white rounded-lg hover:bg-[#00A67E]/90 transition-colors"
+              >
+                Adhérer à l'association
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -432,54 +481,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-emerald-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Témoignages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-emerald-700 p-6 rounded-lg">
-                <p className="text-lg italic mb-4">"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-emerald-200">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#FFF8E1] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <img 
-              src="/img/heart-icon.svg" 
-              alt="Icône cœur"
-              className="w-24 h-24 mb-6"
-            />
-            <h2 className="text-[2.5rem] font-bold text-[#1D3A34] mb-4">
-              Prêt·e à faire partie de l'action ?
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Impliquez-vous et contribuez à des projets pour impacter positivement votre communauté.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/clubs"
-                className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors"
-              >
-                Découvrir nos clubs
-              </Link>
-              <Link
-                href="/join"
-                className="px-6 py-3 bg-[#00A67E] text-white rounded-lg hover:bg-[#00A67E]/90 transition-colors"
-              >
-                Adhérer à l'association
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
