@@ -520,7 +520,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div className="text-center md:text-left">
-              <img src="/Logo-removebg-preview.png" alt="Grison Club" className="h-24 mb-4 mx-auto md:mx-0" />
+              <img src="/img/Logo-removebg-preview.png" alt="Grison Club" className="h-24 mb-4 mx-auto md:mx-0" />
               <p className="text-gray-300">
                 Ensemble pour un monde meilleur
               </p>
