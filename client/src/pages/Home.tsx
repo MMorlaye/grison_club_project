@@ -516,14 +516,25 @@ const Home = () => {
       </div>
 
 
-      <footer className="bg-[#1B1E32] text-white py-12">
+      <footer className="bg-[#1B4842] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Colonne de gauche */}
             <div>
-              <h3 className="font-semibold mb-4">Association des Guinéens d'Angers</h3>
+              <img 
+                src="./img/Logo-removebg-preview.png" 
+                alt="Grison Club" 
+                className="h-24 mb-4"
+                onError={(e) => {
+                  console.error('Error loading logo');
+                  e.currentTarget.src = 'https://via.placeholder.com/160x60?text=Grison+Club';
+                }}
+              />
               <p className="text-sm text-gray-300 mb-4">
-                Une communauté dynamique et solidaire au service de l'intégration et du développement culturel.
+                Une communauté dynamique engagée dans l'éducation, la culture et l'environnement pour un impact positif durable.
+              </p>
+              <p className="text-sm text-gray-300 mb-4">
+                Travail - Rigueur - Réussite
               </p>
               <div className="flex space-x-4">
                 <Link href="#" className="hover:text-emerald-300">
@@ -542,8 +553,9 @@ const Home = () => {
             <div>
               <h3 className="font-semibold mb-4">Liens Rapides</h3>
               <div className="grid grid-cols-1 gap-2">
-                <Link href="/about" className="text-sm hover:text-emerald-300">À propos</Link>
-                <Link href="/actualites" className="text-sm hover:text-emerald-300">Actualités</Link>
+                <Link href="/about" className="text-sm hover:text-emerald-300">Qui sommes-nous ?</Link>
+                <Link href="/events" className="text-sm hover:text-emerald-300">Événements</Link>
+                <Link href="/resources" className="text-sm hover:text-emerald-300">Ressources</Link>
                 <Link href="/contact" className="text-sm hover:text-emerald-300">Contact</Link>
               </div>
             </div>
@@ -552,13 +564,13 @@ const Home = () => {
             <div>
               <h3 className="font-semibold mb-4">Newsletter</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Restez informé de nos actualités et événements.
+                Restez informé de nos actualités et événements en Guinée et à l'international.
               </p>
               <div className="flex gap-2">
                 <input
                   type="email"
                   placeholder="Votre email"
-                  className="px-4 py-2 rounded bg-[#2A2D45] text-white placeholder-gray-400 flex-grow"
+                  className="px-4 py-2 rounded bg-[#143832] text-white placeholder-gray-400 flex-grow"
                 />
                 <button className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700">
                   OK
@@ -568,8 +580,8 @@ const Home = () => {
           </div>
 
           {/* Ligne de copyright */}
-          <div className="border-t border-gray-700 pt-8 mt-8 text-center text-sm text-gray-400">
-            <p>© 2025 Association des Guinéens d'Angers. Tous droits réservés.</p>
+          <div className="border-t border-gray-600 pt-8 mt-8 text-center text-sm text-gray-300">
+            <p>© 2025 Grison Club. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
