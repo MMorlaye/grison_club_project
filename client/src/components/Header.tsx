@@ -18,11 +18,15 @@ const Header = () => {
         <div className="w-full py-4 flex items-center justify-between border-b border-emerald-500 lg:border-none">
           <div className="flex items-center">
             <Link href="/">
-              <a>
+              <a className="flex items-center">
                 <img 
-                  src="/img/Logo-removebg-preview.png" 
+                  src="./img/Logo-removebg-preview.png" 
                   alt="Grison Club Logo"
                   className="h-16 w-auto object-contain"
+                  onError={(e) => {
+                    console.error('Error loading logo');
+                    e.currentTarget.src = 'https://via.placeholder.com/160x60?text=Grison+Club';
+                  }}
                 />
               </a>
             </Link>
