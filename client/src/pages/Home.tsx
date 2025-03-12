@@ -173,9 +173,6 @@ const Home = () => {
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             Ensemble pour un monde meilleur avec le Grison Club
           </h1>
-          <p className="devise border-t border-white/20 pt-4 mt-4">
-            Travail - Rigueur - Réussite
-          </p>
           <p className="mt-6 text-xl max-w-3xl">
             Le Grison Club s'engage dans l'éducation, la culture et l'environnement pour créer un impact positif durable dans nos communautés.
           </p>
