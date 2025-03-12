@@ -516,47 +516,60 @@ const Home = () => {
       </div>
 
 
-      <footer className="bg-[#1B4842] text-white py-12">
+      <footer className="bg-[#1B1E32] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="text-center md:text-left">
-              <img 
-                src="./img/Logo-removebg-preview.png" 
-                alt="Grison Club" 
-                className="h-24 mb-4 mx-auto md:mx-0"
-                onError={(e) => {
-                  console.error('Error loading logo');
-                  e.currentTarget.src = 'https://via.placeholder.com/160x60?text=Grison+Club';
-                }}
-              />
-              <p className="text-gray-300">
-                Ensemble pour un monde meilleur
+            {/* Colonne de gauche */}
+            <div>
+              <h3 className="font-semibold mb-4">Association des Guinéens d'Angers</h3>
+              <p className="text-sm text-gray-300 mb-4">
+                Une communauté dynamique et solidaire au service de l'intégration et du développement culturel.
               </p>
-              <p className="devise border-t border-white/20 pt-4 mt-4">
-                Travail - Rigueur - Réussite
+              <div className="flex space-x-4">
+                <Link href="#" className="hover:text-emerald-300">
+                  <FaFacebook size={20} />
+                </Link>
+                <Link href="#" className="hover:text-emerald-300">
+                  <FaTwitter size={20} />
+                </Link>
+                <Link href="#" className="hover:text-emerald-300">
+                  <FaInstagram size={20} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Colonne du milieu - Liens Rapides */}
+            <div>
+              <h3 className="font-semibold mb-4">Liens Rapides</h3>
+              <div className="grid grid-cols-1 gap-2">
+                <Link href="/about" className="text-sm hover:text-emerald-300">À propos</Link>
+                <Link href="/actualites" className="text-sm hover:text-emerald-300">Actualités</Link>
+                <Link href="/contact" className="text-sm hover:text-emerald-300">Contact</Link>
+              </div>
+            </div>
+
+            {/* Colonne de droite - Newsletter */}
+            <div>
+              <h3 className="font-semibold mb-4">Newsletter</h3>
+              <p className="text-sm text-gray-300 mb-4">
+                Restez informé de nos actualités et événements.
               </p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-emerald-300">À propos</Link></li>
-                <li><Link href="/clubs" className="hover:text-emerald-300">Nos clubs</Link></li>
-                <li><Link href="/news" className="hover:text-emerald-300">Actualités</Link></li>
-                <li><Link href="/contact" className="hover:text-emerald-300">Contact</Link></li>
-              </ul>
-            </div>
-            <div className="text-center md:text-right">
-              <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
-              <div className="flex justify-center md:justify-end space-x-4">
-                <a href="#" className="hover:text-emerald-300"><FaFacebook size={24} /></a>
-                <a href="#" className="hover:text-emerald-300"><FaTwitter size={24} /></a>
-                <a href="#" className="hover:text-emerald-300"><FaInstagram size={24} /></a>
-                <a href="#" className="hover:text-emerald-300"><FaLinkedin size={24} /></a>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Votre email"
+                  className="px-4 py-2 rounded bg-[#2A2D45] text-white placeholder-gray-400 flex-grow"
+                />
+                <button className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700">
+                  OK
+                </button>
               </div>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-8 mt-8 text-center text-gray-300">
-            <p>&copy; 2025 Grison Club. Tous droits réservés.</p>
+
+          {/* Ligne de copyright */}
+          <div className="border-t border-gray-700 pt-8 mt-8 text-center text-sm text-gray-400">
+            <p>© 2025 Association des Guinéens d'Angers. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
