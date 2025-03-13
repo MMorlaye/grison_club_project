@@ -451,12 +451,8 @@ const Home = () => {
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 1"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-1-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>
@@ -465,12 +461,8 @@ const Home = () => {
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 2"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-2-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>
@@ -479,12 +471,8 @@ const Home = () => {
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 3"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-3-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>
@@ -497,12 +485,8 @@ const Home = () => {
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 4"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-4-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>
@@ -511,12 +495,8 @@ const Home = () => {
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 5"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-5-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>
@@ -525,12 +505,8 @@ const Home = () => {
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 6"
-                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
+                className="w-full h-full object-cover gallery-image"
                 key={`gallery-6-${galleryIndex}`}
-                style={{
-                  opacity: 1,
-                  transition: 'opacity 3s ease-in-out'
-                }}
               />
             </div>
           </div>

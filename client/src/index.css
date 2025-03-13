@@ -51,6 +51,16 @@
   }
 }
 
+/* Animation de fondu pour la galerie */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .animate-scroll {
   animation: scroll 120s linear infinite;
   display: flex;
@@ -75,32 +85,26 @@
   transform: rotate(15deg);
 }
 
-/* Animation de transition des images */
-.card-image {
-  opacity: 1;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: opacity;
-  filter: blur(0);
+/* Styles pour la galerie */
+.gallery-image {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: opacity 1s ease-in-out;
 }
 
-.card-image-enter {
+.gallery-image-enter {
   opacity: 0;
-  filter: blur(8px);
 }
 
-.card-image-enter-active {
+.gallery-image-enter-active {
   opacity: 1;
-  filter: blur(0);
 }
 
-.card-image-exit {
-  opacity: 1;
-  filter: blur(0);
-}
-
-.card-image-exit-active {
-  opacity: 0;
-  filter: blur(8px);
+.gallery-image-exit {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 .hero-section {
