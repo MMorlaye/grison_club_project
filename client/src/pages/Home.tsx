@@ -68,49 +68,27 @@ const heroImages = [
     caption: "Événements culturels"
   },
   {
-    url: "./HERO/IMG-20230922-WA0069.jpg",
+    url: "./HERO/IMG-20230922-WA0082.jpg",
     caption: "Sensibilisation"
   },
   {
-    url: "./HERO/IMG-20240218-WA0044.jpg",
+    url: "./HERO/IMG-20240610-WA0098.jpg",
     caption: "Éducation et formation"
   },
   {
-    url: "./HERO/IMG-20230922-WA0071.jpg",
+    url: "./HERO/IMG-20240811-WA0068.jpg",
     caption: "Culture et traditions"
   }
 ];
 
-const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [galleryIndex, setGalleryIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 8000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setGalleryIndex((prev) => (prev + 1) % galleryImages.set1.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const impactNumbers = [
+const impactNumbers = [
     { number: "+2000", label: "Projets de volontariat à l'international" },
     { number: "+100", label: "Projets de volontariat en France" },
     { number: "+300", label: "Volontaires français·e·s à l'international" },
     { number: "+1000", label: "Volontaires en France" }
   ];
 
-  const objectives = [
+const objectives = [
     {
       icon: <GraduationCap className="h-12 w-12 text-emerald-800" />,
       title: "Éducation",
@@ -133,11 +111,11 @@ const Home = () => {
     }
   ];
 
-  const recentActivities = [
+const recentActivities = [
   {
     title: "Journée de sensibilisation environnementale",
     date: "Mars 2024",
-    image: "./HERO/IMG-20230922-WA0064.jpg",
+    image: "./HERO/IMG-20240610-WA0116.jpg", 
     description: "Sensibilisation des jeunes à la protection de l'environnement"
   },
   {
@@ -154,7 +132,7 @@ const Home = () => {
   }
 ];
 
-  const testimonials = [
+const testimonials = [
     {
       quote: "Le Grison Club m'a permis de développer mes compétences tout en aidant les autres.",
       author: "Marie K.",
@@ -172,7 +150,7 @@ const Home = () => {
     }
   ];
 
-  const Article = ({ id, title, date, image, description, slug }) => (
+const Article = ({ id, title, date, image, description, slug }) => (
     <div key={id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-6">
@@ -186,6 +164,28 @@ const Home = () => {
   );
 
 
+const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 6000); 
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setGalleryIndex((prev) => (prev + 1) % galleryImages.set1.length);
+    }, 6000); 
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div>
       <div className="relative bg-emerald-800 text-white hero-section">
@@ -195,7 +195,7 @@ const Home = () => {
               key={index}
               src={image.url}
               alt={image.caption}
-              className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+              className={`absolute w-full h-full object-cover transition-opacity duration-2000 ${
                 index === currentSlide ? 'opacity-20' : 'opacity-0'
               }`}
             />
@@ -449,7 +449,7 @@ const Home = () => {
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 1"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-1-${galleryIndex}`}
               />
             </div>
@@ -459,7 +459,7 @@ const Home = () => {
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 2"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-2-${galleryIndex}`}
               />
             </div>
@@ -469,7 +469,7 @@ const Home = () => {
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 3"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-3-${galleryIndex}`}
               />
             </div>
@@ -483,7 +483,7 @@ const Home = () => {
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 4"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-4-${galleryIndex}`}
               />
             </div>
@@ -493,7 +493,7 @@ const Home = () => {
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 5"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-5-${galleryIndex}`}
               />
             </div>
@@ -503,7 +503,7 @@ const Home = () => {
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 6"
-                className="w-full h-full object-cover transition-opacity duration-1000"
+                className="w-full h-full object-cover transition-opacity duration-2000" 
                 key={`gallery-6-${galleryIndex}`}
               />
             </div>
