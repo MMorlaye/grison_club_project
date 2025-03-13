@@ -407,14 +407,15 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section Galerie */}
       <div className="py-16 bg-white">
         {/* Première rangée avec 3 cartes */}
         <div className="grid grid-cols-3 gap-4 mb-16">
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
-                src={heroImages[currentSlide].url}
-                alt="Image rotative 1"
+                src="./HERO/IMG-20240722-WA0013.jpg"
+                alt="Image galerie 1"
                 className="w-full h-full object-cover card-image"
                 key={`card-1-${currentSlide}`}
               />
@@ -423,8 +424,8 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src={heroImages[(currentSlide + 1) % heroImages.length].url}
-                alt="Image rotative 2"
+                src="./HERO/IMG-20240811-WA0068.jpg"
+                alt="Image galerie 2"
                 className="w-full h-full object-cover card-image"
                 key={`card-2-${currentSlide}`}
               />
@@ -433,8 +434,8 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
-                src={heroImages[(currentSlide + 2) % heroImages.length].url}
-                alt="Image rotative 3"
+                src="./HERO/IMG-20240811-WA0075.jpg"
+                alt="Image galerie 3"
                 className="w-full h-full object-cover card-image"
                 key={`card-3-${currentSlide}`}
               />
@@ -447,8 +448,8 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
-                src={heroImages[(currentSlide + 3) % heroImages.length].url}
-                alt="Image rotative 4"
+                src="./HERO/IMG-20240811-WA0084.jpg"
+                alt="Image galerie 4"
                 className="w-full h-full object-cover card-image"
                 key={`card-4-${currentSlide}`}
               />
@@ -457,8 +458,8 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src={heroImages[(currentSlide + 4) % heroImages.length].url}
-                alt="Image rotative 5"
+                src="./HERO/IMG-20240811-WA0088.jpg"
+                alt="Image galerie 5"
                 className="w-full h-full object-cover card-image"
                 key={`card-5-${currentSlide}`}
               />
@@ -467,8 +468,8 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
-                src={heroImages[(currentSlide + 5) % heroImages.length].url}
-                alt="Image rotative 6"
+                src="./HERO/IMG-20240811-WA0099.jpg"
+                alt="Image galerie 6"
                 className="w-full h-full object-cover card-image"
                 key={`card-6-${currentSlide}`}
               />
