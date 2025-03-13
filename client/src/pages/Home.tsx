@@ -36,24 +36,24 @@ const partners = [
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    caption: "Sensibilisation environnementale"
+    url: "./HERO/IMG-20230922-WA0027.jpg",
+    caption: "Actions communautaires"
   },
   {
-    url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    caption: "Échange intergénérationnel"
+    url: "./HERO/IMG-20240610-WA0084.jpg",
+    caption: "Événements culturels"
   },
   {
-    url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    caption: "Actions solidaires"
+    url: "./HERO/IMG-20230922-WA0069.jpg",
+    caption: "Sensibilisation"
   },
   {
-    url: "https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    caption: "Formation des jeunes"
+    url: "./HERO/IMG-20240218-WA0044.jpg",
+    caption: "Éducation et formation"
   },
   {
-    url: "https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    caption: "Projets culturels"
+    url: "./HERO/IMG-20230922-WA0071.jpg",
+    caption: "Culture et traditions"
   }
 ];
 
@@ -101,25 +101,25 @@ const Home = () => {
   ];
 
   const recentActivities = [
-    {
-      title: "Journée de sensibilisation environnementale",
-      date: "Mars 2024",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      description: "Sensibilisation des jeunes à la protection de l'environnement"
-    },
-    {
-      title: "Collecte de fonds annuelle",
-      date: "Février 2024",
-      image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      description: "Soirée de gala pour soutenir nos projets éducatifs"
-    },
-    {
-      title: "Atelier intergénérationnel",
-      date: "Janvier 2024",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-      description: "Échange de savoirs entre seniors et jeunes"
-    }
-  ];
+  {
+    title: "Journée de sensibilisation environnementale",
+    date: "Mars 2024",
+    image: "./HERO/IMG-20230922-WA0064.jpg",
+    description: "Sensibilisation des jeunes à la protection de l'environnement"
+  },
+  {
+    title: "Collecte de fonds annuelle",
+    date: "Février 2024",
+    image: "./HERO/IMG-20240610-WA0098.jpg",
+    description: "Soirée de gala pour soutenir nos projets éducatifs"
+  },
+  {
+    title: "Atelier intergénérationnel",
+    date: "Janvier 2024",
+    image: "./HERO/IMG-20230922-WA0068.jpg",
+    description: "Échange de savoirs entre seniors et jeunes"
+  }
+];
 
   const testimonials = [
     {
@@ -139,7 +139,6 @@ const Home = () => {
     }
   ];
 
-  // Placeholder for Article component - needs to be implemented separately.
   const Article = ({ id, title, date, image, description, slug }) => (
     <div key={id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
@@ -273,7 +272,7 @@ const Home = () => {
             {/* Carte Éducation */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                src="./HERO/IMG-20240218-WA0044.jpg"
                 alt="Éducation"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -289,7 +288,7 @@ const Home = () => {
             {/* Carte Environnement */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                src="./HERO/IMG-20230922-WA0063.jpg"
                 alt="Environnement"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -305,7 +304,7 @@ const Home = () => {
             {/* Carte Culture */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                src="./HERO/IMG-20240610-WA0116.jpg"
                 alt="Culture"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -321,7 +320,7 @@ const Home = () => {
             {/* Carte Volontariat */}
             <div className="group relative h-80 overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                src="./HERO/IMG-20230922-WA0075.jpg"
                 alt="Volontariat"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -511,6 +510,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
 
 
       <footer className="bg-[#1B4842] text-white py-12">
