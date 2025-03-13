@@ -164,6 +164,14 @@ const Article = ({ id, title, date, image, description, slug }) => (
   );
 
 
+const GalleryImage = ({ src, alt, isActive }) => (
+  <img
+    src={src}
+    alt={alt}
+    className={`gallery-image ${isActive ? 'active' : ''}`}
+  />
+);
+
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [galleryIndex, setGalleryIndex] = useState(0);
@@ -448,32 +456,38 @@ const Home = () => {
         <div className="grid grid-cols-3 gap-4 mb-16">
           <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-              <img
-                src={galleryImages.set1[galleryIndex]}
-                alt="Image galerie 1"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-1-${galleryIndex}`}
-              />
+              {galleryImages.set1.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-1-${index}`}
+                  src={image}
+                  alt={`Image galerie 1-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-              <img
-                src={galleryImages.set2[galleryIndex]}
-                alt="Image galerie 2"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-2-${galleryIndex}`}
-              />
+              {galleryImages.set2.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-2-${index}`}
+                  src={image}
+                  alt={`Image galerie 2-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-              <img
-                src={galleryImages.set3[galleryIndex]}
-                alt="Image galerie 3"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-3-${galleryIndex}`}
-              />
+              {galleryImages.set3.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-3-${index}`}
+                  src={image}
+                  alt={`Image galerie 3-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -482,32 +496,38 @@ const Home = () => {
         <div className="flex justify-center gap-16">
           <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
-              <img
-                src={galleryImages.set2[galleryIndex]}
-                alt="Image galerie 4"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-4-${galleryIndex}`}
-              />
+              {galleryImages.set2.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-4-${index}`}
+                  src={image}
+                  alt={`Image galerie 4-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
-              <img
-                src={galleryImages.set3[galleryIndex]}
-                alt="Image galerie 5"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-5-${galleryIndex}`}
-              />
+              {galleryImages.set3.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-5-${index}`}
+                  src={image}
+                  alt={`Image galerie 5-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
-              <img
-                src={galleryImages.set1[galleryIndex]}
-                alt="Image galerie 6"
-                className="w-full h-full object-cover gallery-image"
-                key={`gallery-6-${galleryIndex}`}
-              />
+              {galleryImages.set1.map((image, index) => (
+                <GalleryImage
+                  key={`gallery-6-${index}`}
+                  src={image}
+                  alt={`Image galerie 6-${index}`}
+                  isActive={index === galleryIndex}
+                />
+              ))}
             </div>
           </div>
         </div>
