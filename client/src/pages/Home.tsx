@@ -68,15 +68,15 @@ const heroImages = [
     caption: "Événements culturels"
   },
   {
-    url: "./HERO/IMG-20230922-WA0082.jpg",
+    url: "./HERO/IMG-20230922-WA0001.jpg",
     caption: "Sensibilisation"
   },
   {
-    url: "./HERO/IMG-20240610-WA0098.jpg",
+    url: "./HERO/IMG-20230922-WA0076.jpg",
     caption: "Éducation et formation"
   },
   {
-    url: "./HERO/IMG-20240811-WA0068.jpg",
+    url: "./HERO/IMG-20230922-WA0081.jpg",
     caption: "Culture et traditions"
   }
 ];
@@ -185,6 +185,8 @@ const Home = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const galleryTransitionStyle = "transition-all duration-3000 ease-in-out transform hover:scale-105";
 
   return (
     <div>
@@ -444,33 +446,45 @@ const Home = () => {
       <div className="py-16 bg-white">
         {/* Première rangée avec 3 cartes */}
         <div className="grid grid-cols-3 gap-4 mb-16">
-          <div className="relative w-[250px] h-[250px] mx-auto">
+          <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 1"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-1-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
-          <div className="relative w-[250px] h-[250px] mx-auto">
+          <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 2"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-2-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
-          <div className="relative w-[250px] h-[250px] mx-auto">
+          <div className="relative w-[250px] h-[250px] mx-auto overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 3"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-3-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
@@ -478,33 +492,45 @@ const Home = () => {
 
         {/* Deuxième rangée avec 3 cartes */}
         <div className="flex justify-center gap-16">
-          <div className="relative w-[250px] h-[250px]">
+          <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
                 src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 4"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-4-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
-          <div className="relative w-[250px] h-[250px]">
+          <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
                 src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 5"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-5-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
-          <div className="relative w-[250px] h-[250px]">
+          <div className="relative w-[250px] h-[250px] overflow-hidden">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
                 src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 6"
-                className="w-full h-full object-cover transition-opacity duration-2000" 
+                className={`w-full h-full object-cover ${galleryTransitionStyle}`}
                 key={`gallery-6-${galleryIndex}`}
+                style={{
+                  opacity: 1,
+                  transition: 'opacity 3s ease-in-out'
+                }}
               />
             </div>
           </div>
