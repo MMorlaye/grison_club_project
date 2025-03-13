@@ -59,11 +59,15 @@ const heroImages = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 8000);
-    return () => clearInterval(timer);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   const impactNumbers = [
@@ -148,46 +152,10 @@ const Home = () => {
     </div>
   );
 
-  const imageGroups = [
-    [
-      "./HERO/IMG-20230922-WA0062.jpg",
-      "./HERO/IMG-20230922-WA0067.jpg",
-      "./HERO/IMG-20230922-WA0082.jpg",
-      "./HERO/IMG-20240610-WA0084.jpg",
-      "./HERO/IMG-20240610-WA0098.jpg",
-      "./HERO/IMG-20240610-WA0116.jpg"
-    ],
-    [
-      "./HERO/IMG-20230922-WA0001.jpg",
-      "./HERO/IMG-20230922-WA0030.jpg",
-      "./HERO/IMG-20231210-WA0016.jpg",
-      "./HERO/IMG-20240510-WA0008.jpg",
-      "./HERO/IMG-20240527-WA0055.jpg",
-      "./HERO/IMG-20240811-WA0068.jpg"
-    ],
-    [
-      "./HERO/IMG-20240811-WA0075.jpg",
-      "./HERO/IMG-20240811-WA0084.jpg",
-      "./HERO/IMG-20240811-WA0088.jpg",
-      "./HERO/IMG-20240811-WA0099.jpg",
-      "./HERO/IMG-20240811-WA0109.jpg",
-      "./HERO/IMG-20240806-WA0027.jpg"
-    ]
-  ];
-
-  const [currentGroup, setCurrentGroup] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentGroup((prev) => (prev + 1) % imageGroups.length);
-    }, 5000); 
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div>
-      <div className="relative bg-emerald-800/80 text-white hero-section">
+      <div className="relative bg-emerald-800 text-white hero-section">
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
             <img
@@ -195,7 +163,7 @@ const Home = () => {
               src={image.url}
               alt={image.caption}
               className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-50' : 'opacity-0'
+                index === currentSlide ? 'opacity-20' : 'opacity-0'
               }`}
             />
           ))}
@@ -440,19 +408,72 @@ const Home = () => {
       </div>
 
       <div className="py-16 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {imageGroups[currentGroup].map((image, index) => (
-            <div 
-              key={`${currentGroup}-${index}`} 
-              className="relative aspect-square overflow-hidden rounded-lg"
-            >
+        {/* Première rangée avec 3 cartes */}
+        <div className="grid grid-cols-3 gap-4 mb-16">
+          <div className="relative w-[250px] h-[250px] mx-auto">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
-                src={image}
-                alt={`Galerie image ${index + 1}`}
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                src={heroImages[currentSlide].url}
+                alt="Image rotative 1"
+                className="w-full h-full object-cover card-image"
+                key={`card-1-${currentSlide}`}
               />
             </div>
-          ))}
+          </div>
+          <div className="relative w-[250px] h-[250px] mx-auto">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src={heroImages[(currentSlide + 1) % heroImages.length].url}
+                alt="Image rotative 2"
+                className="w-full h-full object-cover card-image"
+                key={`card-2-${currentSlide}`}
+              />
+            </div>
+          </div>
+          <div className="relative w-[250px] h-[250px] mx-auto">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+              <img
+                src={heroImages[(currentSlide + 2) % heroImages.length].url}
+                alt="Image rotative 3"
+                className="w-full h-full object-cover card-image"
+                key={`card-3-${currentSlide}`}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Deuxième rangée avec 3 cartes */}
+        <div className="flex justify-center gap-16">
+          <div className="relative w-[250px] h-[250px]">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
+              <img
+                src={heroImages[(currentSlide + 3) % heroImages.length].url}
+                alt="Image rotative 4"
+                className="w-full h-full object-cover card-image"
+                key={`card-4-${currentSlide}`}
+              />
+            </div>
+          </div>
+          <div className="relative w-[250px] h-[250px]">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src={heroImages[(currentSlide + 4) % heroImages.length].url}
+                alt="Image rotative 5"
+                className="w-full h-full object-cover card-image"
+                key={`card-5-${currentSlide}`}
+              />
+            </div>
+          </div>
+          <div className="relative w-[250px] h-[250px]">
+            <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
+              <img
+                src={heroImages[(currentSlide + 5) % heroImages.length].url}
+                alt="Image rotative 6"
+                className="w-full h-full object-cover card-image"
+                key={`card-6-${currentSlide}`}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -489,6 +510,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
 
 
       <footer className="bg-[#1B4842] text-white py-12">
