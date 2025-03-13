@@ -3,6 +3,30 @@ import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen } from 'lucide
 import { Link } from 'wouter';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Added imports
 
+const galleryImages = {
+  set1: [
+    "./HERO/IMG-20230922-WA0001.jpg",
+    "./HERO/IMG-20230922-WA0030.jpg",
+    "./HERO/IMG-20230922-WA0062.jpg",
+    "./HERO/IMG-20240722-WA0013.jpg",
+    "./HERO/IMG-20240811-WA0068.jpg",
+  ],
+  set2: [
+    "./HERO/IMG-20230922-WA0067.jpg",
+    "./HERO/IMG-20240510-WA0008.jpg",
+    "./HERO/IMG-20240511-WA0024.jpg",
+    "./HERO/IMG-20240811-WA0075.jpg",
+    "./HERO/IMG-20240811-WA0084.jpg",
+  ],
+  set3: [
+    "./HERO/IMG-20230922-WA0076.jpg",
+    "./HERO/IMG-20230922-WA0081.jpg",
+    "./HERO/IMG-20230922-WA0082.jpg",
+    "./HERO/IMG-20240811-WA0088.jpg",
+    "./HERO/IMG-20240811-WA0099.jpg",
+  ]
+};
+
 const partners = [
     { 
       name: "Office National du Tourisme", 
@@ -59,6 +83,7 @@ const heroImages = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,6 +93,14 @@ const Home = () => {
     return () => {
       clearInterval(timer);
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setGalleryIndex((prev) => (prev + 1) % galleryImages.set1.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
   }, []);
 
   const impactNumbers = [
@@ -414,30 +447,30 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
-                src="./HERO/IMG-20240722-WA0013.jpg"
+                src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 1"
-                className="w-full h-full object-cover card-image"
-                key={`card-1-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-1-${galleryIndex}`}
               />
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src="./HERO/IMG-20240811-WA0068.jpg"
+                src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 2"
-                className="w-full h-full object-cover card-image"
-                key={`card-2-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-2-${galleryIndex}`}
               />
             </div>
           </div>
           <div className="relative w-[250px] h-[250px] mx-auto">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
-                src="./HERO/IMG-20240811-WA0075.jpg"
+                src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 3"
-                className="w-full h-full object-cover card-image"
-                key={`card-3-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-3-${galleryIndex}`}
               />
             </div>
           </div>
@@ -448,30 +481,30 @@ const Home = () => {
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-left">
               <img
-                src="./HERO/IMG-20240811-WA0084.jpg"
+                src={galleryImages.set2[galleryIndex]}
                 alt="Image galerie 4"
-                className="w-full h-full object-cover card-image"
-                key={`card-4-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-4-${galleryIndex}`}
               />
             </div>
           </div>
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src="./HERO/IMG-20240811-WA0088.jpg"
+                src={galleryImages.set3[galleryIndex]}
                 alt="Image galerie 5"
-                className="w-full h-full object-cover card-image"
-                key={`card-5-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-5-${galleryIndex}`}
               />
             </div>
           </div>
           <div className="relative w-[250px] h-[250px]">
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden card-rotate-right">
               <img
-                src="./HERO/IMG-20240811-WA0099.jpg"
+                src={galleryImages.set1[galleryIndex]}
                 alt="Image galerie 6"
-                className="w-full h-full object-cover card-image"
-                key={`card-6-${currentSlide}`}
+                className="w-full h-full object-cover transition-opacity duration-1000"
+                key={`gallery-6-${galleryIndex}`}
               />
             </div>
           </div>
