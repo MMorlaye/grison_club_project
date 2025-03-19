@@ -33,8 +33,40 @@ const newsItems: NewsItem[] = [
     title: "Conférence islamique du Ramadan",
     date: "Mars 2025",
     image: "./HERO/IMG-20230922-WA0068.jpg",
-    description: "Une conférence islamique et une rupture collective organisées à l'occasion du mois saint de Ramadan.",
+    description: "Une conférence islamique et une rupture collective organisées pendant le Ramadan.",
     slug: "conference-ramadan-2025"
+  },
+  {
+    id: 4,
+    title: "Atelier sur les droits des jeunes filles",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20240610-WA0116.jpg",
+    description: "Amazones Grison Club organise un atelier sur les droits des jeunes filles",
+    slug: "atelier-droits-jeunes-filles"
+  },
+  {
+    id: 5,
+    title: "Immersion solidaire à l'orphelinat Dimakan",
+    date: "Octobre 2024",
+    image: "./HERO/IMG-20230922-WA0076.jpg",
+    description: "Visite et soutien à l'orphelinat Dimakan de Coyah",
+    slug: "immersion-orphelinat-dimakan"
+  },
+  {
+    id: 6,
+    title: "Journée de lecture à Coyah",
+    date: "Mai 2024",
+    image: "./HERO/IMG-20230922-WA0030.jpg",
+    description: "Promotion de la lecture à la Maison des Jeunes de Friguaidy",
+    slug: "journee-lecture-coyah"
+  },
+  {
+    id: 7,
+    title: "Campagne de reboisement à Coyah",
+    date: "Août 2024",
+    image: "./HERO/IMG-20230922-WA0063.jpg",
+    description: "Initiative environnementale pour un avenir plus vert",
+    slug: "campagne-reboisement-coyah"
   }
 ];
 
