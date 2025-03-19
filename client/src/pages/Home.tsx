@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen } from 'lucide-react';
+import { ArrowRight, GraduationCap, Globe, Users, Heart, BookOpen, Calendar } from 'lucide-react';
 import { Link } from 'wouter';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Added imports
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const galleryImages = {
   set1: [
@@ -154,18 +154,33 @@ const testimonials = [
   ];
 
 const Article = ({ id, title, date, image, description, slug }) => (
-    <div key={id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <div className="text-sm text-emerald-800 font-semibold mb-2">{date}</div>
-        <Link href={`/news/${slug}`}>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-        </Link>
-        <p className="text-gray-600 mb-4">{description}</p>
+  <Link key={id} href={`/news/${slug}`}>
+    <a className="block bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+      <div className="relative h-48">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
-    </div>
-  );
-
+      <div className="p-6">
+        <div className="flex items-center text-sm text-emerald-800 mb-2">
+          <Calendar className="h-4 w-4 mr-2" />
+          {date}
+        </div>
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          {title}
+        </h2>
+        <p className="text-gray-600">
+          {description}
+        </p>
+        <div className="mt-4 text-emerald-800 font-medium">
+          Lire la suite →
+        </div>
+      </div>
+    </a>
+  </Link>
+);
 
 const GalleryImage = ({ src, alt, isActive }) => (
   <img
@@ -554,7 +569,7 @@ const Home = () => {
                 date={activity.date}
                 image={activity.image}
                 description={activity.description}
-                slug={activity.title.toLowerCase().replace(/ /g, '-')}
+                slug={activity.slug}
               />
             ))}
           </div>
@@ -569,7 +584,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
 
 
       <footer className="bg-[#1B4842] text-white py-12">

@@ -20,17 +20,11 @@ const newsItems: NewsItem[] = [
     image: "./HERO/IMG-20240610-WA0116.jpg",
     description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars",
     slug: "journee-femme-2025",
-    content: `En célébration de la Journée internationale des droits des femmes, l'ONG Grison Club a organisé une journée de sensibilisation spéciale le 8 mars 2025. 
+    content: `À l’occasion de la Journée internationale des droits des femmes, célébrée chaque 8 mars, notre ONG a organisé une journée de sensibilisation dédiée aux femmes et aux jeunes filles de Coyah. Cet événement visait à promouvoir l’égalité des sexes, l’autonomisation des femmes et l’importance de leur rôle dans la société.
 
-Cette journée a été consacrée à la promotion des droits des femmes et des jeunes filles, mettant en lumière leur rôle essentiel dans notre société.
+Lors de cette journée, plusieurs thématiques ont été abordées à travers des conférences, des débats et des témoignages inspirants. Des intervenants spécialisés ont échangé avec les participantes sur les défis liés à l’éducation, à l’indépendance économique et à l’engagement citoyen des femmes.
 
-Points forts de l'événement :
-- Ateliers de sensibilisation sur les droits des femmes
-- Témoignages inspirants de femmes leaders
-- Discussions sur l'autonomisation des jeunes filles
-- Activités culturelles et éducatives
-
-Cette initiative s'inscrit dans notre engagement continu pour l'égalité des genres et l'autonomisation des femmes.`
+Des activités interactives ont également été organisées, permettant aux jeunes filles de s’exprimer librement sur leurs aspirations et les obstacles qu’elles rencontrent. Cette journée a été marquée par un fort engagement des participants et a permis de renforcer la sensibilisation autour des droits des femmes dans la communauté.`
   },
   {
     id: 2,
@@ -39,17 +33,11 @@ Cette initiative s'inscrit dans notre engagement continu pour l'égalité des ge
     image: "./HERO/IMG-20240610-WA0098.jpg",
     description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée",
     slug: "partenariat-conseil-jeunesse-2025",
-    content: `Le 04 Février 2025, l'ONG Grison Club a collaboré avec le conseil communal de la jeunesse de Coyah pour une journée dédiée à la jeunesse guinéenne.
+    content: `Le 4 février 2025, notre ONG, en partenariat avec le Conseil Communal de la Jeunesse de Coyah, a organisé une journée dédiée aux jeunes. Cet événement avait pour objectif de créer un espace d’échange et de réflexion sur la mission du Conseil National de la Jeunesse de Guinée et sur l’engagement des jeunes dans le développement du pays.
 
-L'objectif principal était de créer un espace d'échange et de réflexion sur la mission du Conseil national de la Jeunesse de Guinée et l'engagement de la jeunesse Guinéenne.
+Durant cette journée, des ateliers de discussion ont été mis en place afin de permettre aux jeunes participants d’exprimer leurs attentes et leurs préoccupations. Des représentants du Conseil Communal et des experts ont pris la parole pour expliquer les enjeux du leadership et de la participation active des jeunes dans la vie citoyenne.
 
-Au programme :
-- Présentation de la mission du Conseil national de la Jeunesse
-- Ateliers de réflexion sur l'engagement citoyen
-- Sessions de dialogue entre jeunes et autorités locales
-- Élaboration de projets d'action communautaire
-
-Cette initiative a permis de renforcer les liens entre les jeunes et les institutions locales tout en promouvant une participation active dans le développement communautaire.`
+Des débats enrichissants ont permis d’aborder des sujets cruciaux tels que l’entrepreneuriat, la formation professionnelle et l’implication des jeunes dans la gouvernance locale. L’événement s’est conclu par des recommandations concrètes pour renforcer le rôle de la jeunesse dans la construction d’une société plus inclusive et dynamique.`
   },
   {
     id: 3,
@@ -58,17 +46,13 @@ Cette initiative a permis de renforcer les liens entre les jeunes et les institu
     image: "./HERO/IMG-20230922-WA0068.jpg",
     description: "Une conférence islamique et une rupture collective organisées pendant le Ramadan",
     slug: "conference-ramadan-2025",
-    content: `À l'occasion du mois saint de Ramadan, l'association Grison Club a organisé une conférence islamique suivie d'une rupture collective le 16 Mars 2025.
+    content: `Dans le cadre du mois saint de Ramadan, notre association a organisé, le 16 mars 2025, une conférence islamique suivie d’une rupture collective. Cet événement avait pour but de réunir la communauté autour des valeurs de partage, de spiritualité et de solidarité.
 
-Cet événement spirituel et communautaire a rassemblé les membres de notre communauté dans un esprit de partage et de réflexion.
+La conférence a été animée par des érudits et des imams, qui ont partagé leurs connaissances sur des thématiques liées à la foi, à la patience et à l’importance du Ramadan dans la vie spirituelle des musulmans. Les discussions ont porté sur le renforcement des liens familiaux, l’entraide et la bienveillance envers autrui.
 
-Au programme de la journée :
-- Conférence sur les valeurs spirituelles du Ramadan
-- Échanges sur l'importance du jeûne et de la solidarité
-- Prières communes
-- Rupture collective du jeûne (Iftar)
+Après la conférence, une rupture collective a été organisée, rassemblant des fidèles de divers horizons. Ce moment de convivialité a permis aux participants de partager un repas dans une ambiance fraternelle, renforçant ainsi les valeurs de solidarité et de cohésion sociale prônées par l’Islam.
 
-Cette initiative a renforcé les liens communautaires et promu les valeurs de partage et de solidarité pendant ce mois sacré.`
+À travers ces actions, notre ONG continue de jouer un rôle actif dans l’éducation, la sensibilisation et le renforcement des liens communautaires à Coyah.`
   }
 ];
 
