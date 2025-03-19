@@ -115,21 +115,21 @@ const recentActivities = [
   {
     title: "Journée internationale des droits des femmes",
     date: "Mars 2025",
-    image: "./HERO/IMG-20240610-WA0116.jpg",
+    image: "/news/journee_de_sensibilisation.jpg",
     description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars, célébrant la femme et la jeune fille.",
     slug: "journee-femme-2025"
   },
   {
     title: "Partenariat avec le conseil communal de la jeunesse",
     date: "Février 2025",
-    image: "./HERO/IMG-20240610-WA0098.jpg",
+    image: "/news/journee_jeune_pour_jeune.jpg",
     description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée.",
     slug: "partenariat-conseil-jeunesse-2025"
   },
   {
     title: "Conférence islamique du Ramadan",
     date: "Mars 2025",
-    image: "./HERO/IMG-20230922-WA0068.jpg",
+    image: "/news/conference_islamique.jpg",
     description: "Une conférence islamique et une rupture collective organisées à l'occasion du mois saint de Ramadan.",
     slug: "conference-ramadan-2025"
   }
@@ -584,6 +584,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
 
 
       <footer className="bg-[#1B4842] text-white py-12">
