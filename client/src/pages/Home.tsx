@@ -249,7 +249,7 @@ const Home = () => {
       <div className="py-16 bg-white mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold text-gray-900 mb-8">
-            Dans la réalisation de nos actions, nous sommes soutenu·e·s par :
+            Dans la réalisation de nos actions, nous collaborons avec des organisations dans un esprit mutuel :
           </h2>
           <div className="relative overflow-hidden">
             <div className="animate-scroll">
