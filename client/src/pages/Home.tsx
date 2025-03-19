@@ -113,40 +113,43 @@ const objectives = [
 
 const recentActivities = [
   {
-    title: "Journée de sensibilisation environnementale",
-    date: "Mars 2024",
-    image: "./HERO/IMG-20240610-WA0116.jpg", 
-    description: "Sensibilisation des jeunes à la protection de l'environnement"
+    title: "Journée internationale des droits des femmes",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20240610-WA0116.jpg",
+    description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars, célébrant la femme et la jeune fille.",
+    slug: "journee-femme-2025"
   },
   {
-    title: "Collecte de fonds annuelle",
-    date: "Février 2024",
+    title: "Partenariat avec le conseil communal de la jeunesse",
+    date: "Février 2025",
     image: "./HERO/IMG-20240610-WA0098.jpg",
-    description: "Soirée de gala pour soutenir nos projets éducatifs"
+    description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée.",
+    slug: "partenariat-conseil-jeunesse-2025"
   },
   {
-    title: "Atelier intergénérationnel",
-    date: "Janvier 2024",
+    title: "Conférence islamique du Ramadan",
+    date: "Mars 2025",
     image: "./HERO/IMG-20230922-WA0068.jpg",
-    description: "Échange de savoirs entre seniors et jeunes"
+    description: "Une conférence islamique et une rupture collective organisées à l'occasion du mois saint de Ramadan.",
+    slug: "conference-ramadan-2025"
   }
 ];
 
 const testimonials = [
     {
       quote: "Le Grison Club m'a permis de développer mes compétences tout en aidant les autres.",
-      author: "Marie K.",
-      role: "Membre depuis 2022"
+      author: "Houssainatou D.",
+      role: "Membre depuis 2017"
     },
     {
-      quote: "Une expérience enrichissante qui m'a ouvert de nouvelles perspectives.",
-      author: "Thomas L.",
-      role: "Bénévole"
+      quote: "Une aventure humaine et formatrice qui a transformé ma vision des choses.",
+      author: "Issa Bailo D.",
+      role: "Membre active depuis 2020"
     },
     {
-      quote: "Grâce au club, j'ai pu concrétiser mon projet environnemental.",
-      author: "Sophie M.",
-      role: "Porteuse de projet"
+      quote: "Rejoindre le club a été le point de départ de mon engagement pour ma communauté",
+      author: "Ousmane T",
+      role: "Ancien Président du Grison Club"
     }
   ];
 
@@ -280,12 +283,12 @@ const Home = () => {
               Grison-Club est une association guinéenne engagée dans l'éducation, la culture, la protection de l'environnement et la formation de jeunes leaders bénévoles au service de leurs communautés. À travers des ateliers éducatifs, des campagnes de reboisement, des projets culturels et des actions humanitaires, nous œuvrons pour renforcer les compétences des jeunes et bâtir des communautés résilientes.
             </p>
             <p>
-              En partenariat avec des clubs affiliés en Guinée et à l'international, nous organisons chaque année des dizaines de projets locaux et internationaux, mobilisant plus de 500 membres actifs et des centaines de bénévoles. Nos délégations régionales coordonnent des initiatives comme des bibliothèques mobiles, des séminaires de leadership ou des opérations d'assainissement, tandis que notre réseau international promeut la solidarité entre l'Afrique, l'Europe et au-delà. Notre objectif ? Former des citoyens engagés, capables de contribuer à un développement durable et inclusif.
+              Implantés à Coyah, en Guinée, nous organisons chaque année de nombreux projets locaux, tels que des séminaires, des formations et des ateliers. Nos actions visent à sensibiliser, former et mobiliser la communauté autour de thématiques essentielles comme l'éducation, le leadership et le développement durable. À travers ces initiatives, nous aspirons à renforcer l'engagement citoyen et à contribuer activement au progrès de notre région.
             </p>
             <blockquote className="testimonial-text bg-white p-6 rounded-lg shadow-lg my-8">
               « Ce qui m'a marqué, c'est l'équilibre entre les actions concrètes, comme planter des arbres, et les réflexions sur notre rôle dans la société. Les formations m'ont aidé à développer mon leadership, et les rencontres avec d'autres membres ont été inspirantes. Grison-Club m'a permis de grandir tout en servant ma communauté. »
               <footer className="mt-2 text-base font-normal text-gray-600">
-                Fatou, 19 ans, membre active du Grison Youth Club
+                Aissata Dramé, ex Présidente du Grison Club
               </footer>
             </blockquote>
             <div className="mt-8">

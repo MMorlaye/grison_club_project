@@ -15,55 +15,60 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    title: "Journée de sensibilisation environnementale",
-    date: "Mars 2024",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Sensibilisation des jeunes à la protection de l'environnement",
-    slug: "journee-sensibilisation-environnementale",
-    content: `Le Grison Club a organisé une journée de sensibilisation environnementale qui a réuni plus de 100 jeunes de la région. 
+    title: "Journée internationale des droits des femmes",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20240610-WA0116.jpg",
+    description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars",
+    slug: "journee-femme-2025",
+    content: `En célébration de la Journée internationale des droits des femmes, l'ONG Grison Club a organisé une journée de sensibilisation spéciale le 8 mars 2025. 
 
-Au programme de cette journée enrichissante :
+Cette journée a été consacrée à la promotion des droits des femmes et des jeunes filles, mettant en lumière leur rôle essentiel dans notre société.
 
-- Ateliers pratiques sur le tri des déchets
-- Conférences sur les enjeux climatiques
-- Activités de nettoyage collectif
-- Plantation d'arbres dans le parc municipal
+Points forts de l'événement :
+- Ateliers de sensibilisation sur les droits des femmes
+- Témoignages inspirants de femmes leaders
+- Discussions sur l'autonomisation des jeunes filles
+- Activités culturelles et éducatives
 
-Cette initiative s'inscrit dans notre engagement continu pour la protection de l'environnement et l'éducation des jeunes aux enjeux écologiques.`
+Cette initiative s'inscrit dans notre engagement continu pour l'égalité des genres et l'autonomisation des femmes.`
   },
   {
     id: 2,
-    title: "Collecte de fonds annuelle",
-    date: "Février 2024",
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Soirée de gala pour soutenir nos projets éducatifs",
-    slug: "collecte-fonds-annuelle",
-    content: `Notre collecte de fonds annuelle a été un véritable succès ! 
+    title: "Partenariat avec le conseil communal de la jeunesse",
+    date: "Février 2025",
+    image: "./HERO/IMG-20240610-WA0098.jpg",
+    description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée",
+    slug: "partenariat-conseil-jeunesse-2025",
+    content: `Le 04 Février 2025, l'ONG Grison Club a collaboré avec le conseil communal de la jeunesse de Coyah pour une journée dédiée à la jeunesse guinéenne.
 
-La soirée a permis de :
-- Récolter des fonds pour nos projets éducatifs
-- Présenter nos réalisations de l'année
-- Rencontrer nos partenaires et soutiens
-- Partager notre vision pour l'avenir
+L'objectif principal était de créer un espace d'échange et de réflexion sur la mission du Conseil national de la Jeunesse de Guinée et l'engagement de la jeunesse Guinéenne.
 
-Nous remercions chaleureusement tous les participants et donateurs qui rendent nos actions possibles.`
+Au programme :
+- Présentation de la mission du Conseil national de la Jeunesse
+- Ateliers de réflexion sur l'engagement citoyen
+- Sessions de dialogue entre jeunes et autorités locales
+- Élaboration de projets d'action communautaire
+
+Cette initiative a permis de renforcer les liens entre les jeunes et les institutions locales tout en promouvant une participation active dans le développement communautaire.`
   },
   {
     id: 3,
-    title: "Atelier intergénérationnel",
-    date: "Janvier 2024",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Échange de savoirs entre seniors et jeunes",
-    slug: "atelier-intergenerationnel",
-    content: `L'atelier intergénérationnel a créé des ponts entre les générations.
+    title: "Conférence islamique du Ramadan",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20230922-WA0068.jpg",
+    description: "Une conférence islamique et une rupture collective organisées pendant le Ramadan",
+    slug: "conference-ramadan-2025",
+    content: `À l'occasion du mois saint de Ramadan, l'association Grison Club a organisé une conférence islamique suivie d'une rupture collective le 16 Mars 2025.
 
-Les participants ont pu :
-- Échanger des savoirs traditionnels
-- Partager des expériences de vie
-- Apprendre les uns des autres
-- Créer des liens durables
+Cet événement spirituel et communautaire a rassemblé les membres de notre communauté dans un esprit de partage et de réflexion.
 
-Une belle démonstration de l'importance du dialogue entre générations.`
+Au programme de la journée :
+- Conférence sur les valeurs spirituelles du Ramadan
+- Échanges sur l'importance du jeûne et de la solidarité
+- Prières communes
+- Rupture collective du jeûne (Iftar)
+
+Cette initiative a renforcé les liens communautaires et promu les valeurs de partage et de solidarité pendant ce mois sacré.`
   }
 ];
 
