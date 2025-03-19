@@ -16,7 +16,7 @@ const newsItems: NewsItem[] = [
     id: 1,
     title: "Journée internationale des droits des femmes",
     date: "Mars 2025",
-    image: "./attached_assets/journee_de_sensibilisation.jpg",
+    image: "/news/journee_de_sensibilisation.jpg",
     description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars, célébrant la femme et la jeune fille.",
     slug: "journee-femme-2025"
   },
@@ -24,7 +24,7 @@ const newsItems: NewsItem[] = [
     id: 2,
     title: "Partenariat avec le conseil communal de la jeunesse",
     date: "Février 2025",
-    image: "./attached_assets/journee_jeune_pour_jeune.jpg",
+    image: "/news/journee_jeune_pour_jeune.jpg",
     description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée.",
     slug: "partenariat-conseil-jeunesse-2025"
   },
@@ -32,7 +32,7 @@ const newsItems: NewsItem[] = [
     id: 3,
     title: "Conférence islamique du Ramadan",
     date: "Mars 2025",
-    image: "./attached_assets/conference_islamique.jpg",
+    image: "/news/conference_islamique.jpg",
     description: "Une conférence islamique et une rupture collective organisées pendant le Ramadan.",
     slug: "conference-ramadan-2025"
   },
@@ -40,7 +40,7 @@ const newsItems: NewsItem[] = [
     id: 4,
     title: "Atelier sur les droits des jeunes filles",
     date: "Mars 2025",
-    image: "./attached_assets/amazones_grison_club.jpg",
+    image: "/news/amazones_grison_club.jpg",
     description: "Amazones Grison Club organise un atelier sur les droits des jeunes filles",
     slug: "atelier-droits-jeunes-filles"
   },
@@ -48,7 +48,7 @@ const newsItems: NewsItem[] = [
     id: 5,
     title: "Immersion solidaire à l'orphelinat Dimakan",
     date: "Octobre 2024",
-    image: "./attached_assets/orphelinat_dimakan.jpg",
+    image: "/news/orphelinat_dimakan.jpg",
     description: "Visite et soutien à l'orphelinat Dimakan de Coyah",
     slug: "immersion-orphelinat-dimakan"
   },
@@ -56,7 +56,7 @@ const newsItems: NewsItem[] = [
     id: 6,
     title: "Journée de lecture à Coyah",
     date: "Mai 2024",
-    image: "./attached_assets/journee_de_lecture.jpg",
+    image: "/news/journee_de_lecture.jpg",
     description: "Promotion de la lecture à la Maison des Jeunes de Friguaidy",
     slug: "journee-lecture-coyah"
   },
@@ -64,7 +64,7 @@ const newsItems: NewsItem[] = [
     id: 7,
     title: "Campagne de reboisement à Coyah",
     date: "Août 2024",
-    image: "./attached_assets/journee_de_reboisement.jpg",
+    image: "/news/journee_de_reboisement.jpg",
     description: "Initiative environnementale pour un avenir plus vert",
     slug: "campagne-reboisement-coyah"
   }

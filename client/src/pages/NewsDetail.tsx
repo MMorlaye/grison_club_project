@@ -17,7 +17,7 @@ const newsItems: NewsItem[] = [
     id: 1,
     title: "Journée internationale des droits des femmes",
     date: "Mars 2025",
-    image: "./attached_assets/journee_de_sensibilisation.jpg",
+    image: "/news/journee_de_sensibilisation.jpg",
     description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars",
     slug: "journee-femme-2025",
     content: `À l'occasion de la Journée internationale des droits des femmes, célébrée chaque 8 mars, notre ONG a organisé une journée de sensibilisation dédiée aux femmes et aux jeunes filles de Coyah. 
@@ -36,7 +36,7 @@ Cette initiative s'inscrit dans notre engagement continu pour l'égalité des ge
     id: 2,
     title: "Partenariat avec le conseil communal de la jeunesse",
     date: "Février 2025",
-    image: "./attached_assets/journee_jeune_pour_jeune.jpg",
+    image: "/news/journee_jeune_pour_jeune.jpg",
     description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée",
     slug: "partenariat-conseil-jeunesse-2025",
     content: `Le 04 Février 2025, l'ONG Grison Club a collaboré avec le conseil communal de la jeunesse de Coyah pour une journée dédiée à la jeunesse guinéenne.
@@ -55,7 +55,7 @@ Cette initiative a permis de renforcer les liens entre les jeunes et les institu
     id: 3,
     title: "Conférence islamique du Ramadan",
     date: "Mars 2025",
-    image: "./attached_assets/conference_islamique.jpg",
+    image: "/news/conference_islamique.jpg",
     description: "Une conférence islamique et une rupture collective organisées pendant le Ramadan",
     slug: "conference-ramadan-2025",
     content: `Dans le cadre du mois saint de Ramadan, notre association a organisé, le 16 mars 2025, une conférence islamique suivie d'une rupture collective. Cet événement avait pour but de réunir la communauté autour des valeurs de partage, de spiritualité et de solidarité.
@@ -68,7 +68,7 @@ Après la conférence, une rupture collective a été organisée, rassemblant de
     id: 4,
     title: "Atelier sur les droits des jeunes filles",
     date: "Mars 2025",
-    image: "./attached_assets/amazones_grison_club.jpg",
+    image: "/news/amazones_grison_club.jpg",
     description: "Amazones Grison Club organise un atelier sur les droits des jeunes filles",
     slug: "atelier-droits-jeunes-filles",
     content: `Le 9 mars dernier, Amazones Grison Club, une des associations filleules du GRISON CLUB, a organisé un atelier de formation sur les droits des jeunes filles. Placé sous le thème "Droit des jeunes filles : comprendre, défendre et agir", cet événement avait pour but de sensibiliser les participantes à leurs droits fondamentaux et de les outiller pour les défendre efficacement.
@@ -79,7 +79,7 @@ Au cours de cet atelier, des experts en droits de l'homme et en genre ont animé
     id: 5,
     title: "Immersion solidaire à l'orphelinat Dimakan",
     date: "Octobre 2024",
-    image: "./attached_assets/orphelinat_dimakan.jpg",
+    image: "/news/orphelinat_dimakan.jpg",
     description: "Visite et soutien à l'orphelinat Dimakan de Coyah",
     slug: "immersion-orphelinat-dimakan",
     content: `En octobre 2024, le Grison Club a organisé une immersion au sein de l'orphelinat Dimakan de Coyah. Cette initiative visait à apporter du soutien moral et matériel aux enfants en situation de vulnérabilité tout en sensibilisant les membres du club aux réalités du travail social et humanitaire.
@@ -90,7 +90,7 @@ Lors de cette visite, les bénévoles ont partagé des moments d'échange avec l
     id: 6,
     title: "Journée de lecture à Coyah",
     date: "Mai 2024",
-    image: "./attached_assets/journee_de_lecture.jpg",
+    image: "/news/journee_de_lecture.jpg",
     description: "Promotion de la lecture à la Maison des Jeunes de Friguaidy",
     slug: "journee-lecture-coyah",
     content: `En mai 2024, le Grison Club a organisé une journée de lecture à la Maison des Jeunes de Friguaidy, à Coyah. Cet événement avait pour objectif de promouvoir l'importance de la lecture chez les jeunes et de les encourager à développer une culture littéraire.
@@ -101,7 +101,7 @@ Durant cette journée, des séances de lecture interactive ont été animées pa
     id: 7,
     title: "Campagne de reboisement à Coyah",
     date: "Août 2024",
-    image: "./attached_assets/journee_de_reboisement.jpg",
+    image: "/news/journee_de_reboisement.jpg",
     description: "Initiative environnementale pour un avenir plus vert",
     slug: "campagne-reboisement-coyah",
     content: `En août 2024, le Grison Club, en partenariat avec le Conseil Communal de la Jeunesse de Coyah, a organisé une campagne de reboisement. Cette initiative visait à sensibiliser la communauté à l'importance de la préservation de l'environnement et à encourager l'adoption de pratiques écologiques durables.
