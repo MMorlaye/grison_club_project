@@ -14,29 +14,58 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    title: "Journée de sensibilisation environnementale",
-    date: "Mars 2024",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Sensibilisation des jeunes à la protection de l'environnement. Une journée riche en apprentissages et en actions concrètes pour notre planète.",
-    slug: "journee-sensibilisation-environnementale"
+    title: "Journée internationale des droits des femmes",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20240610-WA0116.jpg",
+    description: "L'ONG a organisé une journée de sensibilisation à l'occasion du 08 Mars, célébrant la femme et la jeune fille.",
+    slug: "journee-femme-2025"
   },
   {
     id: 2,
-    title: "Collecte de fonds annuelle",
-    date: "Février 2024",
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Soirée de gala pour soutenir nos projets éducatifs. Un événement qui a réuni de nombreux donateurs et sympathisants.",
-    slug: "collecte-fonds-annuelle"
+    title: "Partenariat avec le conseil communal de la jeunesse",
+    date: "Février 2025",
+    image: "./HERO/IMG-20240610-WA0098.jpg",
+    description: "Organisation d'une journée d'échange sur la mission du Conseil national de la Jeunesse de Guinée.",
+    slug: "partenariat-conseil-jeunesse-2025"
   },
   {
     id: 3,
-    title: "Atelier intergénérationnel",
-    date: "Janvier 2024",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    description: "Échange de savoirs entre seniors et jeunes. Une belle occasion de partager les connaissances et les expériences.",
-    slug: "atelier-intergenerationnel"
+    title: "Conférence islamique du Ramadan",
+    date: "Mars 2025",
+    image: "./HERO/IMG-20230922-WA0068.jpg",
+    description: "Une conférence islamique et une rupture collective organisées à l'occasion du mois saint de Ramadan.",
+    slug: "conference-ramadan-2025"
   }
 ];
+
+const Article = ({ id, title, date, image, description, slug }) => (
+  <Link key={id} href={`/news/${slug}`}>
+    <a className="block bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+      <div className="relative h-48">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <div className="flex items-center text-sm text-emerald-800 mb-2">
+          <Calendar className="h-4 w-4 mr-2" />
+          {date}
+        </div>
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          {title}
+        </h2>
+        <p className="text-gray-600">
+          {description}
+        </p>
+        <div className="mt-4 text-emerald-800 font-medium">
+          Lire la suite →
+        </div>
+      </div>
+    </a>
+  </Link>
+);
 
 const News = () => {
   return (
@@ -51,32 +80,15 @@ const News = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.map((news) => (
-            <Link key={news.id} href={`/news/${news.slug}`}>
-              <a className="block bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                <div className="relative h-48">
-                  <img
-                    src={news.image}
-                    alt={news.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-emerald-800 mb-2">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    {news.date}
-                  </div>
-                  <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                    {news.title}
-                  </h2>
-                  <p className="text-gray-600">
-                    {news.description}
-                  </p>
-                  <div className="mt-4 text-emerald-800 font-medium">
-                    Lire la suite →
-                  </div>
-                </div>
-              </a>
-            </Link>
+            <Article
+              key={news.id}
+              id={news.id}
+              title={news.title}
+              date={news.date}
+              image={news.image}
+              description={news.description}
+              slug={news.slug}
+            />
           ))}
         </div>
       </div>
