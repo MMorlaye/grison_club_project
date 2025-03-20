@@ -9,12 +9,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 const Contact = () => {
   const { toast } = useToast();
-
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -25,34 +22,37 @@ const Contact = () => {
     }
   });
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: (data: InsertContactMessage) => 
-      apiRequest('/api/contact', {
+  const onSubmit = async (data: InsertContactMessage) => {
+    try {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        body: JSON.stringify(data)
-      }).then(res => {
-        if (!res.ok) {
-          return res.json().then(err => {
-            throw new Error(err.message || 'Une erreur est survenue');
-          });
-        }
-        return res.json();
-      }),
-    onSuccess: () => {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Une erreur est survenue');
+      }
+
       toast({
         title: "Message envoyé",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
+
       form.reset();
-    },
-    onError: (error: Error) => {
+    } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         variant: "destructive",
         title: "Erreur",
-        description: error.message || "Une erreur est survenue lors de l'envoi du message",
+        description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
       });
     }
-  });
+  };
 
   return (
     <div className="bg-white min-h-screen pt-20">
@@ -70,7 +70,7 @@ const Contact = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-8">Formulaire de contact</h2>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit((data) => mutate(data))} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -132,12 +132,11 @@ const Contact = () => {
                 />
 
                 <Button 
-                  type="submit" 
-                  variant="default"
+                  type="submit"
                   className="w-full bg-emerald-800 text-white hover:bg-emerald-700 transition-colors"
-                  disabled={isPending}
+                  disabled={form.formState.isSubmitting}
                 >
-                  {isPending ? 'Envoi en cours...' : 'Envoyer'}
+                  {form.formState.isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                 </Button>
               </form>
             </Form>
