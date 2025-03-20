@@ -24,6 +24,13 @@ const Contact = () => {
 
   const onSubmit = async (data: InsertContactMessage) => {
     try {
+      // Désactiver le formulaire pendant la soumission
+      form.reset(data, { 
+        keepValues: true,
+        keepIsSubmitted: false,
+        keepErrors: false
+      });
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -38,19 +45,29 @@ const Contact = () => {
         throw new Error(result.message || 'Une erreur est survenue');
       }
 
+      // Succès
       toast({
         title: "Message envoyé",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
 
+      // Réinitialiser complètement le formulaire en cas de succès
       form.reset();
     } catch (error) {
       console.error('Contact form error:', error);
 
+      // Gérer l'erreur
       toast({
         variant: "destructive",
         title: "Erreur",
         description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
+      });
+
+      // Permettre une nouvelle soumission en cas d'erreur
+      form.reset(data, {
+        keepValues: true,
+        keepIsSubmitted: false,
+        keepErrors: true
       });
     }
   };

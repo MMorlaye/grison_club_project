@@ -4,17 +4,14 @@ import { storage } from "./storage";
 import { sql } from "drizzle-orm";
 import { insertContactMessageSchema } from "@shared/schema";
 import * as pg from "@neondatabase/serverless";
-import WebSocket from "ws";
 import { Resend } from "resend";
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Create a new PostgreSQL client with WebSocket configuration
+// Create a new PostgreSQL client
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  webSocketConstructor: WebSocket,
-  useSecureWebSocket: true,
 });
 
 // Connect with error handling
