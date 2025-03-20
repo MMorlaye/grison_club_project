@@ -33,7 +33,7 @@ const Header = () => {
                   className="h-16 w-auto object-contain"
                   onError={(e) => {
                     console.error('Error loading logo');
-                    e.currentTarget.src = 'https://via.placeholder.com/160x60?text=Grison+Club';
+                    e.currentTarget.src = 'https://ui-avatars.com/api/?name=Grison+Club&background=059669&color=fff';
                   }}
                 />
               </a>
