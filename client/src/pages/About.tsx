@@ -9,7 +9,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold">À propos du Grison Club</h1>
           <p className="mt-4 text-xl">
-            Une association engagée dans l'éducation et le développement durable depuis plus de 20 ans.
+            Une association engagée dans l'éducation et le développement durable depuis plus de 8 ans.
           </p>
         </div>
       </div>

@@ -9,7 +9,6 @@ const Header = () => {
     { name: 'Qui sommes-nous ?', href: '/about' },
     { name: 'Actu', href: '/news' },
     { name: 'Événements', href: '/events' },
-    { name: 'Ressources', href: '/resources' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -22,7 +21,7 @@ const Header = () => {
               <a className="flex items-center">
                 <img 
                   src="./img/Logo-removebg-preview.png" 
-                  alt="Grison Club Logo"
+                  alt="Grison Club Logo" 
                   className="h-16 w-auto object-contain"
                   onError={(e) => {
                     console.error('Error loading logo');

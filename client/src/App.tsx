@@ -11,7 +11,6 @@ import NewsDetail from "./pages/NewsDetail";
 import Clubs from "./pages/Clubs";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
-import Resources from "./pages/Resources";
 import Forum from "./pages/Forum";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -28,7 +27,6 @@ function Router() {
       <Route path="/clubs" component={Clubs} />
       <Route path="/events" component={Events} />
       <Route path="/gallery" component={Gallery} />
-      <Route path="/resources" component={Resources} />
       <Route path="/forum" component={Forum} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
