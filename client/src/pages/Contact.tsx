@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -24,44 +25,34 @@ const Contact = () => {
     }
   });
 
-  const onSubmit = async (data: InsertContactMessage) => {
-    if (isSubmitting) return;
-
-    try {
-      setIsSubmitting(true);
-
-      const response = await fetch('/api/contact', {
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data: InsertContactMessage) => 
+      apiRequest('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Une erreur est survenue');
-      }
-
+        body: JSON.stringify(data)
+      }).then(res => {
+        if (!res.ok) {
+          return res.json().then(err => {
+            throw new Error(err.message || 'Une erreur est survenue');
+          });
+        }
+        return res.json();
+      }),
+    onSuccess: () => {
       toast({
         title: "Message envoyé",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
-
       form.reset();
-    } catch (error) {
-      console.error('Contact form error:', error);
-
+    },
+    onError: (error: Error) => {
       toast({
         variant: "destructive",
         title: "Erreur",
-        description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
+        description: error.message || "Une erreur est survenue lors de l'envoi du message",
       });
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  });
 
   return (
     <div className="bg-white min-h-screen pt-20">
@@ -79,7 +70,7 @@ const Contact = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-8">Formulaire de contact</h2>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit((data) => mutate(data))} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -87,7 +78,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Nom complet</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input placeholder="Votre nom" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -101,7 +92,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" {...field} />
+                        <Input type="email" placeholder="votre@email.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -115,7 +106,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Sujet</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input placeholder="Sujet de votre message" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -131,6 +122,7 @@ const Contact = () => {
                       <FormControl>
                         <Textarea 
                           rows={4}
+                          placeholder="Votre message..."
                           {...field} 
                         />
                       </FormControl>
@@ -142,10 +134,10 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   variant="default"
-                  className="w-full bg-emerald-800 text-white hover:bg-emerald-700"
-                  disabled={isSubmitting}
+                  className="w-full bg-emerald-800 text-white hover:bg-emerald-700 transition-colors"
+                  disabled={isPending}
                 >
-                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                  {isPending ? 'Envoi en cours...' : 'Envoyer'}
                 </Button>
               </form>
             </Form>
