@@ -8,30 +8,20 @@ import Home from "@/pages/Home";
 import About from "./pages/About";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
-import Clubs from "./pages/Clubs";
+import Team from "./pages/Team";  // Ajout de l'import
 import Events from "./pages/Events";
-import Gallery from "./pages/Gallery";
-import Forum from "./pages/Forum";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Membership from "./pages/Membership";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />  {/* Ajout de la route */}
       <Route path="/news" component={News} />
       <Route path="/news/:slug" component={NewsDetail} />
-      <Route path="/clubs" component={Clubs} />
       <Route path="/events" component={Events} />
-      <Route path="/gallery" component={Gallery} />
-      <Route path="/forum" component={Forum} />
       <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/membership" component={Membership} />
       <Route component={NotFound} />
     </Switch>
   );

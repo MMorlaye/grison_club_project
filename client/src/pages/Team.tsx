@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-const Team = () => {
+const Team: React.FC = () => {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* En-tête */}
@@ -74,7 +74,7 @@ const Team = () => {
                 <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
                 <p className="text-sm text-emerald-600 mt-1">{member.role}</p>
                 <p className="text-gray-600 mt-3">{member.description}</p>
-                
+
                 {member.contact && (
                   <div className="mt-4 space-y-2">
                     {member.contact.email && (
