@@ -52,13 +52,6 @@ const Header = () => {
                 {link.name}
               </Button>
             ))}
-            <Button
-              variant="default"
-              className="ml-4 bg-emerald-800 hover:bg-emerald-700 text-white"
-              onClick={() => handleNavigation('/contact')}
-            >
-              Nous rejoindre
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -93,13 +86,6 @@ const Header = () => {
                   {link.name}
                 </Button>
               ))}
-              <Button
-                variant="default"
-                className="w-full bg-emerald-800 hover:bg-emerald-700 text-white mt-2"
-                onClick={() => handleNavigation('/contact')}
-              >
-                Nous rejoindre
-              </Button>
             </div>
           </div>
         )}
