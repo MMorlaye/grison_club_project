@@ -237,17 +237,15 @@ const Home = () => {
             Le Grison Club s'engage dans l'éducation, la culture et l'environnement pour créer un impact positif durable dans nos communautés.
           </p>
           <div className="mt-8 flex space-x-4">
-            <Link
-              href="/about"
-              className="bg-white text-emerald-800 px-6 py-3 rounded-md hover:bg-gray-100 transition-colors"
-            >
-              En savoir plus
+            <Link href="/about">
+              <a className="bg-white text-emerald-800 px-6 py-3 rounded-md hover:bg-gray-100 transition-colors">
+                En savoir plus
+              </a>
             </Link>
-            <Link
-              href="/join"
-              className="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-emerald-800 transition-colors"
-            >
-              Nous rejoindre
+            <Link href="/contact">
+              <a className="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-emerald-800 transition-colors">
+                Nous rejoindre
+              </a>
             </Link>
           </div>
         </div>
