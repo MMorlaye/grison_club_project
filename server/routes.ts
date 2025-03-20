@@ -1,30 +1,11 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { sql } from "drizzle-orm";
-import { insertContactMessageSchema } from "@shared/schema";
-import * as pg from "@neondatabase/serverless";
+import { db } from "./db";
+import { contactMessages, insertContactMessageSchema } from "@shared/schema";
 import { Resend } from "resend";
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Create a new PostgreSQL client
-const client = new pg.Client(process.env.DATABASE_URL);
-
-// Connect with better error handling
-let isConnected = false;
-
-(async () => {
-  try {
-    await client.connect();
-    console.log('Successfully connected to database');
-    isConnected = true;
-  } catch (err) {
-    console.error('Failed to connect to database:', err);
-    isConnected = false;
-  }
-})();
 
 export function registerRoutes(app: Express): Server {
   // Add contact form endpoint
@@ -32,31 +13,26 @@ export function registerRoutes(app: Express): Server {
     console.log("Received contact form submission:", req.body);
 
     try {
-      if (!isConnected) {
-        console.error("Database connection not available");
-        return res.status(503).json({
-          message: "Service temporairement indisponible"
-        });
-      }
-
       // Validate the request body
       const validatedData = insertContactMessageSchema.parse(req.body);
       console.log("Validated data:", validatedData);
 
-      // Insert the message into the database
-      const result = await client.query(
-        `INSERT INTO contact_messages (name, email, subject, message)
-         VALUES ($1, $2, $3, $4)
-         RETURNING *`,
-        [validatedData.name, validatedData.email, validatedData.subject, validatedData.message]
-      );
+      // Insert the message into the database using Drizzle
+      const [result] = await db.insert(contactMessages)
+        .values({
+          name: validatedData.name,
+          email: validatedData.email,
+          subject: validatedData.subject,
+          message: validatedData.message
+        })
+        .returning();
 
-      console.log("Message inserted into database:", result.rows[0]);
+      console.log("Message inserted into database:", result);
 
       // Send success response immediately
       res.status(201).json({
         message: "Message envoyé avec succès",
-        data: result.rows[0]
+        data: result
       });
 
       // Send emails asynchronously after response
