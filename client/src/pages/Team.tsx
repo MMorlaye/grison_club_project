@@ -13,31 +13,31 @@ const teamMembers: TeamMember[] = [
     name: "Issa Bailo DIALLO",
     role: "Secrétaire Générale",
     description: "Engagement et Rigueur",
-    realImage: "/attached_assets/Issa_Bailo_Diallo.jpg"
+    realImage: "/img/team/Issa_Bailo_Diallo.jpg"
   },
   {
     name: "Loubatou DIALLO",
     role: "Responsable Communication",
     description: "Créativité et Innovation",
-    realImage: "/attached_assets/Louabatou Diallo.jpg"
+    realImage: "/img/team/Louabatou Diallo.jpg"
   },
   {
     name: "Alpha Yaya DIAOUNE",
     role: "Responsable Planning",
     description: "Organisation et Efficacité",
-    realImage: "/attached_assets/ALpha_Yaya_Diaoune.jpg"
+    realImage: "/img/team/ALpha_Yaya_Diaoune.jpg"
   },
   {
     name: "Boubacar Poredaka DIALLO",
     role: "Responsable des Affaires Extérieures",
     description: "Diplomatie et Vision",
-    realImage: "/attached_assets/Boubacar_Poredaka_Diallo.png"
+    realImage: "/img/team/Boubacar_Poredaka_Diallo.png"
   },
   {
     name: "Kana BARRY",
     role: "Responsable Trésorerie",
     description: "Précision et Fiabilité",
-    realImage: "/attached_assets/Kana_Barry.png"
+    realImage: "/img/team/Kana_Barry.png"
   }
 ];
 
@@ -52,9 +52,13 @@ const Team: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <img
-                src="/attached_assets/Mariama_Delo_Bah.jpg"
+                src="/img/team/Mariama_Delo_Bah.jpg"
                 alt="Mariama Djelo BAH"
                 className="rounded-lg shadow-xl w-full h-auto max-w-md mx-auto"
+                onError={(e) => {
+                  console.error('Error loading president image');
+                  e.currentTarget.src = 'https://ui-avatars.com/api/?name=Mariama+Djelo+BAH&background=059669&color=fff';
+                }}
               />
             </div>
             <div>
@@ -89,6 +93,10 @@ const Team: React.FC = () => {
                     className={`w-full h-64 object-cover transition-opacity duration-300 ${
                       hoveredMember === index ? 'opacity-100' : 'opacity-0'
                     }`}
+                    onError={(e) => {
+                      console.error(`Error loading image for ${member.name}`);
+                      e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=059669&color=fff`;
+                    }}
                   />
                   <div
                     className={`absolute inset-0 transition-opacity duration-300 ${
