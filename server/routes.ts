@@ -5,6 +5,10 @@ import { sql } from "drizzle-orm";
 import { insertContactMessageSchema } from "@shared/schema";
 import * as pg from "@neondatabase/serverless";
 import WebSocket from "ws";
+import { Resend } from "resend";
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Create a new PostgreSQL client with WebSocket configuration
 const client = new pg.Client({
@@ -37,6 +41,35 @@ export function registerRoutes(app: Express): Server {
          RETURNING *`,
         [validatedData.name, validatedData.email, validatedData.subject, validatedData.message]
       );
+
+      // Send email notification
+      await resend.emails.send({
+        from: 'Grison Club <contact@grisonclub.org>',
+        to: 'grisonclub@gmail.com',
+        subject: `Nouveau message de contact: ${validatedData.subject}`,
+        html: `
+          <h2>Nouveau message de contact</h2>
+          <p><strong>De:</strong> ${validatedData.name}</p>
+          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Sujet:</strong> ${validatedData.subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${validatedData.message}</p>
+        `
+      });
+
+      // Send confirmation email to the sender
+      await resend.emails.send({
+        from: 'Grison Club <contact@grisonclub.org>',
+        to: validatedData.email,
+        subject: 'Confirmation de réception de votre message',
+        html: `
+          <h2>Nous avons bien reçu votre message</h2>
+          <p>Cher(e) ${validatedData.name},</p>
+          <p>Nous vous remercions d'avoir contacté le Grison Club. Nous avons bien reçu votre message concernant "${validatedData.subject}".</p>
+          <p>Notre équipe vous répondra dans les plus brefs délais.</p>
+          <p>Cordialement,<br>L'équipe du Grison Club</p>
+        `
+      });
 
       res.status(201).json({
         message: "Message envoyé avec succès",
