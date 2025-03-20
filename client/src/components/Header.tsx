@@ -9,14 +9,15 @@ const Header = () => {
 
   const navigation = [
     { name: 'Qui sommes-nous ?', href: '/about' },
+    { name: 'Notre équipe', href: '/team' },
     { name: 'Actu', href: '/news' },
     { name: 'Événements', href: '/events' },
     { name: 'Contact', href: '/contact' },
   ];
 
   const handleNavigation = (href: string) => {
-    setIsMenuOpen(false); // Ferme le menu mobile
-    setLocation(href); // Navigation vers la nouvelle page
+    setIsMenuOpen(false);
+    setLocation(href);
   };
 
   return (
@@ -54,9 +55,9 @@ const Header = () => {
             <Button
               variant="default"
               className="ml-4 bg-emerald-800 hover:bg-emerald-700 text-white"
-              onClick={() => handleNavigation('/login')}
+              onClick={() => handleNavigation('/contact')}
             >
-              Se connecter
+              Nous rejoindre
             </Button>
           </div>
 
@@ -95,9 +96,9 @@ const Header = () => {
               <Button
                 variant="default"
                 className="w-full bg-emerald-800 hover:bg-emerald-700 text-white mt-2"
-                onClick={() => handleNavigation('/login')}
+                onClick={() => handleNavigation('/contact')}
               >
-                Se connecter
+                Nous rejoindre
               </Button>
             </div>
           </div>
