@@ -1,7 +1,58 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertContactMessageSchema } from "@shared/schema";
+import { type InsertContactMessage } from "@shared/schema";
+import { useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const form = useForm<InsertContactMessage>({
+    resolver: zodResolver(insertContactMessageSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: ""
+    }
+  });
+
+  const onSubmit = async (data: InsertContactMessage) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Une erreur est survenue');
+      }
+
+      toast({
+        title: "Message envoyé",
+        description: "Nous vous répondrons dans les plus brefs délais.",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
+      });
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <div className="relative bg-emerald-800 text-white py-16">
@@ -17,54 +68,76 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-2xl font-semibold mb-8">Formulaire de contact</h2>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Nom complet
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nom complet</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                  Sujet
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Sujet</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="bg-emerald-800 text-white px-6 py-2 rounded-md hover:bg-emerald-700"
-              >
-                Envoyer
-              </button>
-            </form>
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          rows={4}
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button 
+                  type="submit" 
+                  className="w-full bg-emerald-800 text-white hover:bg-emerald-700"
+                  disabled={form.formState.isSubmitting}
+                >
+                  {form.formState.isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                </Button>
+              </form>
+            </Form>
           </div>
 
           <div>
@@ -74,14 +147,14 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-emerald-800 mr-4" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">contact@grisonclub.org</p>
+                  <p className="text-gray-600">grisonclub@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone className="h-6 w-6 text-emerald-800 mr-4" />
                 <div>
                   <h3 className="font-semibold">Téléphone</h3>
-                  <p className="text-gray-600">+224 XX XX XX XX</p>
+                  <p className="text-gray-600">+224 621 52 24 04</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -94,15 +167,6 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="font-semibold mb-4">Heures d'ouverture</h3>
-              <p className="text-gray-600">
-                Lundi - Vendredi: 9h00 - 17h00<br />
-                Samedi: 9h00 - 13h00<br />
-                Dimanche: Fermé
-              </p>
             </div>
           </div>
         </div>
