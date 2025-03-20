@@ -45,6 +45,8 @@ const Contact = () => {
 
       form.reset();
     } catch (error) {
+      console.error('Contact form error:', error);
+
       toast({
         variant: "destructive",
         title: "Erreur",
@@ -54,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pt-20"> {/* Added pt-20 for header space */}
       <div className="relative bg-emerald-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold">Contact</h1>
@@ -131,6 +133,7 @@ const Contact = () => {
 
                 <Button 
                   type="submit" 
+                  variant="default"
                   className="w-full bg-emerald-800 text-white hover:bg-emerald-700"
                   disabled={form.formState.isSubmitting}
                 >
