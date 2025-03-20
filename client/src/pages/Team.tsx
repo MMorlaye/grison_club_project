@@ -5,7 +5,7 @@ interface TeamMember {
   role: string;
   description: string;
   realImage: string;
-  animatedImage: string;
+  animatedImage?: string; // L'image du personnage animé sera ajoutée plus tard
 }
 
 const teamMembers: TeamMember[] = [
@@ -13,36 +13,31 @@ const teamMembers: TeamMember[] = [
     name: "Issa Bailo DIALLO",
     role: "Secrétaire Générale",
     description: "Engagement et Rigueur",
-    realImage: "/img/team/Issa_Bailo_Diallo.jpg",
-    animatedImage: "/img/team/animated/placeholder1.jpg"
+    realImage: "/img/team/Issa_Bailo_Diallo.jpg"
   },
   {
     name: "Loubatou DIALLO",
     role: "Responsable Communication",
     description: "Créativité et Innovation",
-    realImage: "/img/team/Louabatou Diallo.jpg",
-    animatedImage: "/img/team/animated/placeholder2.jpg"
+    realImage: "/img/team/Louabatou Diallo.jpg"
   },
   {
     name: "Alpha Yaya DIAOUNE",
     role: "Responsable Planning",
     description: "Organisation et Efficacité",
-    realImage: "/img/team/ALpha_Yaya_Diaoune.jpg",
-    animatedImage: "/img/team/animated/placeholder3.jpg"
+    realImage: "/img/team/ALpha_Yaya_Diaoune.jpg"
   },
   {
     name: "Boubacar Poredaka DIALLO",
     role: "Responsable des Affaires Extérieures",
     description: "Diplomatie et Vision",
-    realImage: "/img/team/Boubacar_Poredaka_Diallo.png",
-    animatedImage: "/img/team/animated/placeholder4.png"
+    realImage: "/img/team/Boubacar_Poredaka_Diallo.png"
   },
   {
     name: "Kana BARRY",
     role: "Responsable Trésorerie",
     description: "Précision et Fiabilité",
-    realImage: "/img/team/Kana_Barry.png",
-    animatedImage: "/img/team/animated/placeholder5.png"
+    realImage: "/img/team/Kana_Barry.png"
   }
 ];
 
@@ -103,17 +98,16 @@ const Team: React.FC = () => {
                       e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=059669&color=fff`;
                     }}
                   />
-                  <img
-                    src={member.animatedImage}
-                    alt={`${member.name} (Animated)`}
-                    className={`absolute inset-0 w-full h-64 object-cover transition-opacity duration-300 ${
+                  <div
+                    className={`absolute inset-0 transition-opacity duration-300 ${
                       hoveredMember === index ? 'opacity-0' : 'opacity-100'
                     }`}
-                    onError={(e) => {
-                      console.error(`Error loading animated image for ${member.name}`);
-                      e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=059669&color=fff`;
-                    }}
-                  />
+                  >
+                    {/* Placeholder pour l'image animée - à remplacer */}
+                    <div className="w-full h-64 bg-emerald-100 flex items-center justify-center">
+                      <span className="text-emerald-600">Image animée à venir</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>

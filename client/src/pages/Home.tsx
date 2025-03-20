@@ -244,7 +244,7 @@ const Home = () => {
               En savoir plus
             </Link>
             <Link
-              href="/contact"
+              href="/join"
               className="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-emerald-800 transition-colors"
             >
               Nous rejoindre
