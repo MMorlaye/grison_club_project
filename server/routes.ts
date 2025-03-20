@@ -37,36 +37,41 @@ export function registerRoutes(app: Express): Server {
 
       // Send emails asynchronously after response
       try {
-        await Promise.all([
-          resend.emails.send({
-            from: 'Grison Club <contact@grisonclub.org>',
-            to: 'grisonclub@gmail.com',
-            subject: `Nouveau message de contact: ${validatedData.subject}`,
-            html: `
-              <h2>Nouveau message de contact</h2>
-              <p><strong>De:</strong> ${validatedData.name}</p>
-              <p><strong>Email:</strong> ${validatedData.email}</p>
-              <p><strong>Sujet:</strong> ${validatedData.subject}</p>
-              <p><strong>Message:</strong></p>
-              <p>${validatedData.message}</p>
-            `
-          }),
-          resend.emails.send({
-            from: 'Grison Club <contact@grisonclub.org>',
-            to: validatedData.email,
-            subject: 'Confirmation de réception de votre message',
-            html: `
-              <h2>Nous avons bien reçu votre message</h2>
-              <p>Cher(e) ${validatedData.name},</p>
-              <p>Nous vous remercions d'avoir contacté le Grison Club. Nous avons bien reçu votre message concernant "${validatedData.subject}".</p>
-              <p>Notre équipe vous répondra dans les plus brefs délais.</p>
-              <p>Cordialement,<br>L'équipe du Grison Club</p>
-            `
-          })
-        ]);
-        console.log("Confirmation emails sent successfully");
+        console.log("Tentative d'envoi des emails...");
+
+        const adminEmailResult = await resend.emails.send({
+          from: "Grison Club <onboarding@resend.dev>", // Utilisation du domaine par défaut de Resend
+          to: ["grisonclub@gmail.com"],
+          subject: `Nouveau message de contact: ${validatedData.subject}`,
+          html: `
+            <h2>Nouveau message de contact</h2>
+            <p><strong>De:</strong> ${validatedData.name}</p>
+            <p><strong>Email:</strong> ${validatedData.email}</p>
+            <p><strong>Sujet:</strong> ${validatedData.subject}</p>
+            <p><strong>Message:</strong></p>
+            <p>${validatedData.message}</p>
+          `
+        });
+
+        console.log("Email administrateur envoyé:", adminEmailResult);
+
+        const userEmailResult = await resend.emails.send({
+          from: "Grison Club <onboarding@resend.dev>", // Utilisation du domaine par défaut de Resend
+          to: [validatedData.email],
+          subject: 'Confirmation de réception de votre message',
+          html: `
+            <h2>Nous avons bien reçu votre message</h2>
+            <p>Cher(e) ${validatedData.name},</p>
+            <p>Nous vous remercions d'avoir contacté le Grison Club. Nous avons bien reçu votre message concernant "${validatedData.subject}".</p>
+            <p>Notre équipe vous répondra dans les plus brefs délais.</p>
+            <p>Cordialement,<br>L'équipe du Grison Club</p>
+          `
+        });
+
+        console.log("Email utilisateur envoyé:", userEmailResult);
+
       } catch (emailError) {
-        console.error("Error sending emails:", emailError);
+        console.error("Erreur détaillée lors de l'envoi des emails:", emailError);
       }
 
     } catch (error: any) {
