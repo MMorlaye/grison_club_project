@@ -10,9 +10,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Create a new PostgreSQL client
-const client = new pg.Client({
-  connectionString: process.env.DATABASE_URL,
-});
+const client = new pg.Client(process.env.DATABASE_URL);
 
 // Connect with error handling
 (async () => {

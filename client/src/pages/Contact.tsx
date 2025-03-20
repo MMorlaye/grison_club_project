@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,6 +12,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -23,13 +25,10 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: InsertContactMessage) => {
+    if (isSubmitting) return;
+
     try {
-      // Désactiver le formulaire pendant la soumission
-      form.reset(data, { 
-        keepValues: true,
-        keepIsSubmitted: false,
-        keepErrors: false
-      });
+      setIsSubmitting(true);
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -45,35 +44,27 @@ const Contact = () => {
         throw new Error(result.message || 'Une erreur est survenue');
       }
 
-      // Succès
       toast({
         title: "Message envoyé",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
 
-      // Réinitialiser complètement le formulaire en cas de succès
       form.reset();
     } catch (error) {
       console.error('Contact form error:', error);
 
-      // Gérer l'erreur
       toast({
         variant: "destructive",
         title: "Erreur",
         description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
       });
-
-      // Permettre une nouvelle soumission en cas d'erreur
-      form.reset(data, {
-        keepValues: true,
-        keepIsSubmitted: false,
-        keepErrors: true
-      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="bg-white min-h-screen pt-20"> {/* Added pt-20 for header space */}
+    <div className="bg-white min-h-screen pt-20">
       <div className="relative bg-emerald-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold">Contact</h1>
@@ -152,9 +143,9 @@ const Contact = () => {
                   type="submit" 
                   variant="default"
                   className="w-full bg-emerald-800 text-white hover:bg-emerald-700"
-                  disabled={form.formState.isSubmitting}
+                  disabled={isSubmitting}
                 >
-                  {form.formState.isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                 </Button>
               </form>
             </Form>
