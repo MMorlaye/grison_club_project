@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,6 +12,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 
 const Contact = () => {
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -22,35 +24,46 @@ const Contact = () => {
     }
   });
 
-  const onSubmit = async (data: InsertContactMessage) => {
+  const handleSubmit = async (formData: InsertContactMessage) => {
+    if (submitting) return;
+
     try {
+      setSubmitting(true);
+      console.log('Début de la soumission du formulaire');
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
+      console.log('Réponse reçue:', result);
 
       if (!response.ok) {
         throw new Error(result.message || 'Une erreur est survenue');
       }
+
+      // Réinitialiser le formulaire et afficher le message de succès
+      form.reset();
 
       toast({
         title: "Message envoyé",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
 
-      form.reset();
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('Erreur:', error);
       toast({
         variant: "destructive",
         title: "Erreur",
         description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message",
       });
+    } finally {
+      setSubmitting(false);
+      console.log('Formulaire débloqué');
     }
   };
 
@@ -70,7 +83,7 @@ const Contact = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-8">Formulaire de contact</h2>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -134,9 +147,9 @@ const Contact = () => {
                 <Button 
                   type="submit"
                   className="w-full bg-emerald-800 text-white hover:bg-emerald-700 transition-colors"
-                  disabled={form.formState.isSubmitting}
+                  disabled={submitting}
                 >
-                  {form.formState.isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                  {submitting ? 'Envoi en cours...' : 'Envoyer'}
                 </Button>
               </form>
             </Form>
