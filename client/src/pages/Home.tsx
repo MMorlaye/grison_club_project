@@ -434,6 +434,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Call to Action Section - REPLACED */}
       <div className="bg-[#FFF8E1] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
@@ -449,22 +450,21 @@ const Home = () => {
               Impliquez-vous et contribuez à des projets pour impacter positivement votre communauté.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/clubs"
-                className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors"
-              >
-                Découvrir nos clubs
+              <Link href="/clubs">
+                <a className="px-6 py-3 bg-[#0A4D44] text-white rounded-lg hover:bg-[#0A4D44]/90 transition-colors">
+                  Découvrir nos clubs
+                </a>
               </Link>
-              <Link
-                href="/join"
-                className="px-6 py-3 bg-[#00A67E] text-white rounded-lg hover:bg-[#00A67E]/90 transition-colors"
-              >
-                Adhérer à l'association
+              <Link href="/contact">
+                <a className="px-6 py-3 bg-[#00A67E] text-white rounded-lg hover:bg-[#00A67E]/90 transition-colors">
+                  Adhérer à l'association
+                </a>
               </Link>
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Section Galerie */}
       <div className="py-16 bg-white">
