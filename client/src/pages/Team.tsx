@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface TeamMember {
   name: string;
   role: string;
   description: string;
   realImage: string;
-  animatedImage?: string; // L'image du personnage animé sera ajoutée plus tard
 }
 
 const teamMembers: TeamMember[] = [
@@ -42,8 +41,6 @@ const teamMembers: TeamMember[] = [
 ];
 
 const Team: React.FC = () => {
-  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
-
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Section Présidente */}
@@ -83,31 +80,17 @@ const Team: React.FC = () => {
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
-                onMouseEnter={() => setHoveredMember(index)}
-                onMouseLeave={() => setHoveredMember(null)}
               >
-                <div className="relative aspect-w-4 aspect-h-3">
+                <div className="aspect-w-4 aspect-h-3">
                   <img
                     src={member.realImage}
                     alt={member.name}
-                    className={`w-full h-64 object-cover transition-opacity duration-300 ${
-                      hoveredMember === index ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className="w-full h-64 object-cover"
                     onError={(e) => {
                       console.error(`Error loading image for ${member.name}`);
                       e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=059669&color=fff`;
                     }}
                   />
-                  <div
-                    className={`absolute inset-0 transition-opacity duration-300 ${
-                      hoveredMember === index ? 'opacity-0' : 'opacity-100'
-                    }`}
-                  >
-                    {/* Placeholder pour l'image animée - à remplacer */}
-                    <div className="w-full h-64 bg-emerald-100 flex items-center justify-center">
-                      <span className="text-emerald-600">Image animée à venir</span>
-                    </div>
-                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
